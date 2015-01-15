@@ -1,10 +1,12 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  title: MyString
-  description: MyText
-  image_url: MyString
-  price: 9.99
+ruby_book:
+  title: Programming Ruby 1.9
+  description:
+    Ruby is the greate language for all
+    of us. Learn Ruby as fast as possible!
+  image_url: ruby.png
+  price: 51.29
 
 two:
   title: MyString
