@@ -1,0 +1,16 @@
+ru:
+  time:
+    formats:
+      statement_special: "%B/%Y г."
+      ru_datetime: "%d.%m.%Y, %H:%M"
+      default: "%d.%m.%Y, %H:%M"
+  date:
+    formats:
+      ru_month: "%B"
+  app:
+    now: "Сейчас"
+  number:
+    currency:
+      format:
+        format: "%n %u"
+        unit: "руб"

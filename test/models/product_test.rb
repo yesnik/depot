@@ -66,7 +66,7 @@ class ProductTest < ActiveSupport::TestCase
       description: 'bbb',
       price: 2,
       image_url: 'dolly.gif')
-    assert !product.save
+    assert_not product.save
     assert_equal I18n.t('errors.messages.taken'),
       product.errors[:title].join('; ')
   end
