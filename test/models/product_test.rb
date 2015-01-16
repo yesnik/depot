@@ -26,12 +26,12 @@ class ProductTest < ActiveSupport::TestCase
       )
     product.price = -1
     assert product.invalid?
-    assert_equal "must be greater than or equal to 0.01",
+    assert_equal I18n.t('activerecord.errors.messages.greater_than_or_equal_to'),
       product.errors[:price].join('; ')
 
     product.price = 0
     assert product.invalid?
-    assert_equal "must be greater than or equal to 0.01",
+    assert_equal I18n.t('activerecord.errors.messages.greater_than_or_equal_to'),
       product.errors[:price].join('; ')
 
     product.price = 1

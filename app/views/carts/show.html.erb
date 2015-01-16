@@ -1,0 +1,14 @@
+<% if notice %>
+  <p id="notice"><%= notice %></p>
+<% end %>
+
+<h2>Корзина</h2>
+
+<ul>
+  <% @cart.line_items.each do |item| %>
+    <li><%= item.quantity %> &times; <%= item.product.title %></li>
+  <% end %>
+</ul>
+
+<%= button_to I18n.t('app.clean_cart'), @cart, method: :delete, 
+  data: { confirm: I18n.t('app.delete_confirm') } %>

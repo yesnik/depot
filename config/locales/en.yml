@@ -22,4 +22,20 @@
 en:
   hello: "Hello world"
   app:
+    clean_cart: 'Clean cart'
+    cart_was_destroyed: 'Cart was successfully destroyed.'
+    delete_confirm: 'Are you sure?'
     now: "Now"
+    add_to_cart: 'Add to cart'
+    your_page_views: 'Your views of this page'
+    notice:
+      destroyed: 'Item was destroyed'
+      not_destroyed: 'Item was not destroyed'
+  misc:
+    kids:
+      zero: children
+      one: child
+      other: children
+    views:
+      one: 'view'
+      other: 'views'

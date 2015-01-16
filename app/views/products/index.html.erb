@@ -1,4 +1,7 @@
 <h1>Listing products</h1>
+<% if notice %>
+  <p id="notice"><%= notice %></p>
+<% end %>
 
 <table class="products">
 <% @products.each do |product| %>
@@ -17,10 +20,10 @@
     </td>
 
     <td class="list_actions">
-      <%= link_to 'Show', product %><br/>
-      <%= link_to 'Edit', edit_product_path(product) %><br/>
-      <%= link_to 'Destroy', product, method: :delete,
-                  data: { confirm: 'Are you sure?' } %>
+      <%= link_to 'Показать', product %><br/>
+      <%= link_to 'Ред.', edit_product_path(product) %><br/>
+      <%= link_to 'Удалить', product, method: :delete,
+                  data: { confirm: I18n.t('app.delete_confirm') } %>
     </td>
   </tr>
 <% end %>

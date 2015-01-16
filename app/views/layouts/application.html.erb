@@ -13,14 +13,16 @@
 <body class="<%= controller.controller_name %>">
 <!-- START_HIGHLIGHT -->
   <div id="banner">
+    <a href="/" title="На главную">
     <%= image_tag("logo.png") %>
+    </a>
     <%= @page_title || "Pragmatic Bookshelf" %><!-- <label id="code.depot.e.title"/> -->
   </div>
   <div id="columns">
     <div id="side">
       <ul>
-        <li><a href="http://www....">Home</a></li>
-        <li><a href="http://www..../faq">Questions</a></li>
+        <li><a href="/">Главная</a></li>
+        <li><a href="/products/">Управление товарами</a></li>
         <li><a href="http://www..../news">News</a></li>
         <li><a href="http://www..../contact">Contact</a></li>
       </ul>

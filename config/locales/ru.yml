@@ -1,4 +1,30 @@
 ru:
+  activerecord:
+    errors:
+      messages:
+        greater_than_or_equal_to: "должно быть больше или равно {{count}}"
+        blank: 'не может быть пустым'
+      models:
+        product:
+          attributes:
+            title:
+              taken: 'с таким значением уже есть в базе данных'
+            price:
+              greater_than_or_equal_to: 'должно быть больше или равно {{count}}'
+              not_a_number: 'должно быть числом'
+  app:
+    cart_was_destroyed: 'Корзина была успешно очищена'
+    clean_cart: 'Очистить корзину'
+    delete_confirm: 'Вы уверены?'
+    now: "Сейчас"
+    add_to_cart: 'Добавить в корзину'
+    your_page_views: 'У вас'
+    notice:
+      destroyed: 'Элемент успешно удален'
+      not_destroyed: 'Элемент не удалось удалить'
+  errors:
+    messages:
+      taken: 'с таким значением уже есть в базе данных'
   time:
     formats:
       statement_special: "%B/%Y г."
@@ -7,10 +33,19 @@ ru:
   date:
     formats:
       ru_month: "%B"
-  app:
-    now: "Сейчас"
   number:
     currency:
       format:
         format: "%n %u"
         unit: "руб"
+  misc:
+    kids:
+      zero: 'детей'
+      one: 'ребенок'
+      few: 'ребенка'
+      many: 'детей'
+    views:
+      zero: 'просмотров'
+      one: 'просмотр'
+      few: 'просмотра'
+      many: 'просмотров'
