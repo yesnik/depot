@@ -10,6 +10,8 @@
       </ul>
     </div>
   <% end %>
+  
+  <%= f.hidden_field :lock_version %>
 
   <div class="field">
     <%= f.label :title %><br>
@@ -27,6 +29,7 @@
     <%= f.label :price %><br>
     <%= f.text_field :price %>
   </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>

@@ -41,14 +41,17 @@ class ProductsController < ApplicationController
   # PATCH/PUT /products/1.json
   def update
     respond_to do |format|
-      if @product.update(product_params)
+      if @product.update_attributes(product_params)
         format.html { redirect_to @product, notice: 'Product was successfully updated.' }
         format.json { render :show, status: :ok, location: @product }
       else
-        format.html { render :edit }
+        format.html { render :edit, notice: 'Product was not updated!' }
         format.json { render json: @product.errors, status: :unprocessable_entity }
       end
     end
+  rescue ActiveRecord::StaleObjectError
+    @product.reload
+    render :action => 'conflict'    
   end
 
   # DELETE /products/1
@@ -73,6 +76,7 @@ class ProductsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:title, :description, :image_url, :price)
+      params.require(:product).permit(:title, :description, 
+        :image_url, :price, :lock_version)
     end
 end
