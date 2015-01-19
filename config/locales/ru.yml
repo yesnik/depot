@@ -20,12 +20,16 @@ ru:
           attributes:
             title:
               taken: 'с таким значением уже есть в базе данных'
+              too_short: "должен быть больше"
             price:
               greater_than_or_equal_to: 'должно быть больше или равно {{count}}'
               not_a_number: 'должно быть числом'
             terms_of_service:
               accepted: 'необходимо принять'
   app:
+    models:
+      updated: 'Запись успешно обновлена'
+      created: 'Запись успешно создана'
     cart_was_destroyed: 'Корзина была успешно очищена'
     clean_cart: 'Очистить корзину'
     delete_confirm: 'Вы уверены?'
