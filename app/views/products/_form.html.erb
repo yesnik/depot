@@ -30,6 +30,11 @@
     <%= f.text_field :price %>
   </div>
 
+  <div class="field">
+    <%= f.check_box :terms_of_service, value: 1 %>
+    <%= f.label :terms_of_service %>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>

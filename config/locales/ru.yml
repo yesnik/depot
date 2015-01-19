@@ -1,5 +1,16 @@
 ru:
   activerecord:
+    models:
+      product: 'продукт'
+      cart: 'корзина'
+      line_item: 'товар корзины'
+    attributes:
+      product:
+        price: 'Цена'
+        description: 'Описание'
+        title: 'Заголовок'
+        image_url: 'URL изображения'
+        terms_of_service: 'Согласиться с условиями'
     errors:
       messages:
         greater_than_or_equal_to: "должно быть больше или равно {{count}}"
@@ -12,6 +23,8 @@ ru:
             price:
               greater_than_or_equal_to: 'должно быть больше или равно {{count}}'
               not_a_number: 'должно быть числом'
+            terms_of_service:
+              accepted: 'необходимо принять'
   app:
     cart_was_destroyed: 'Корзина была успешно очищена'
     clean_cart: 'Очистить корзину'

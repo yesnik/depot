@@ -13,6 +13,8 @@ class Product < ActiveRecord::Base
   validates :title, uniqueness: true
   validates :image_url, allow_blank: true, format: { with: /\.(gif|jpg|png)\z/i,
     message: "Изображение должно иметь расширение gif, jpg или png." }
+
+  validates :terms_of_service, acceptance: true
   
   private
 
