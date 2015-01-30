@@ -41,7 +41,7 @@ class ProductTest < ActiveSupport::TestCase
   # Вспомогательный метод для создания экземпляра продукта
   def new_product(image_url)
     Product.new(
-      title: 'My Sup Book', description: 'aaa', 
+      title: 'My Sup Book', description: 'aaa bbb ccc ddd aaa', 
       price: 10.11, image_url: image_url)
   end
 

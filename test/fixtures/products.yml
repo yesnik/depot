@@ -19,3 +19,15 @@ two:
   description: MyText
   image_url: MyString
   price: 9.99
+
+history:
+  title: 'History of Russia'
+  description: 'This is a nice book about Russian history'
+  image_url: 'russia_history.jpg'
+  price: 30
+
+biology:
+  title: 'Biology'
+  description: 'This is a nice book about Biology'
+  image_url: 'biology.jpg'
+  price: 20
