@@ -1,28 +1,22 @@
-== README
+== Интернет-магазин книг на Ruby on Rails
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Этот интернет-магазин создан на основе материал книги C. Руби, Д. Томас, Д. Хэнссон "Гибкая разработка веб-приложений в среде Rails"
 
-Things you may want to cover:
+== Установка
 
-* Ruby version
+* Склонируйте проект и перейдите в его папку
 
-* System dependencies
+    $ git clone git@github.com:yesnik/depot.git
+    $ cd depot
 
-* Configuration
+* Установите гемы для проекта
 
-* Database creation
+    $ bundle install
 
-* Database initialization
+* Создайте БД на основе схемы и импортируйте тестовые данные
 
-* How to run the test suite
+    $ rake db:schema:load db:seed
 
-* Services (job queues, cache servers, search engines, etc.)
+* Запустите сервер разработки
 
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+    $ rails s
