@@ -29,6 +29,9 @@ gem 'spring',        group: :development
 # Гем для отображещия таблиц в консоли Rails
 gem 'hirb',        group: :development
 
+# Гем для поддержки синтаксиса Haml в представлениях
+gem "haml"
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
