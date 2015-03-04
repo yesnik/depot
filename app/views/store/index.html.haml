@@ -1,0 +1,14 @@
+- if notice
+  %p#notice= notice
+
+%h1 Каталог товаров
+
+- @products.each do |product|
+  %div.entry
+    = image_tag(product.image_url)
+    %h3= product.title
+    %div.content= sanitize(product.description)
+    %div.price_line
+      %span.price
+        = number_to_currency(product.price, locale: :ru)
+      = button_to I18n.t('app.add_to_cart'), line_items_path(product_id: product.id)

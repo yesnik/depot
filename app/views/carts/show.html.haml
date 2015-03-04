@@ -1,20 +1,5 @@
-%h2.cart_title Корзина
-
 - if notice
   %p#notice= notice
 
-%table
-  - @cart.line_items.each do |item|
-    %tr
-      %td #{item.quantity} &times;
-      %td= item.product.title
-      %td.item_price= number_to_currency(item.total_price)
-      %td= link_to 'X', line_item_path(item), method: :delete, data: { confirm: 'Are you sure?' }
-    %tr
-  %tr.total_line
-    %td{colspan: 2} Всего
-    %td.total_cell= number_to_currency(@cart.total_price)
-    %td
-  %tr
+= render(@cart)
 
-= hidden_field_tag(:cart_id, @cart.id)

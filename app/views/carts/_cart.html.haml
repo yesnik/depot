@@ -1,0 +1,12 @@
+%h2.cart_title Корзина
+
+%table
+  = render(@cart.line_items)
+
+  %tr.total_line
+    %td{colspan: 2} Всего
+    %td.total_cell= number_to_currency(@cart.total_price)
+    %td
+  %tr
+
+= button_to 'Empty cart', cart, method: :delete, data: { confirm: 'Are you sure?' }
