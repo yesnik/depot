@@ -11,4 +11,6 @@
     %div.price_line
       %span.price
         = number_to_currency(product.price, locale: :ru)
-      = button_to I18n.t('app.add_to_cart'), line_items_path(product_id: product.id)
+      = button_to I18n.t('app.add_to_cart'),
+                  line_items_path(product_id: product.id),
+                  remote: true
