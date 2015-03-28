@@ -1,0 +1,19 @@
+- if notice
+  %p#notice= notice
+
+%h1= @product.title
+
+%h2 Описание
+%p= @product.description
+
+%h2 Изображение:
+%p
+  = image_tag @product.image_url, class: "thumb"
+
+%h2 
+  Цена: 
+  = @product.price
+
+= link_to 'Редактировать', edit_product_path(@product)
+|
+= link_to 'Назад', products_path
