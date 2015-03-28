@@ -62,8 +62,7 @@ class CartsController < ApplicationController
     @cart.destroy
     session[:cart_id] = nil
     respond_to do |format|
-      format.html { redirect_to store_index_url, 
-        notice: I18n.t('app.cart_was_destroyed') }
+      format.html { redirect_to store_index_url }
       format.json { head :ok }
     end
   end

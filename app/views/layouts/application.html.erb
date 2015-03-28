@@ -16,18 +16,18 @@
     <a href="/" title="На главную">
     <%= image_tag("logo.png") %>
     </a>
-    <%= @page_title || "Pragmatic Bookshelf" %><!-- <label id="code.depot.e.title"/> -->
+    <%= @page_title || "Pragmatic Bookshelf" %>
   </div>
   <div id="columns">
     <div id="side">
       <div id="cart">
-        <%= render @cart if @cart %>
+        <%= hidden_div_if(@cart.line_items.empty?, id: 'cart') do %>
+          <%= render @cart if @cart %>
+        <% end %>
       </div>
       <ul>
         <li><a href="/">Главная</a></li>
         <li><a href="/products/">Управление товарами</a></li>
-        <li><a href="http://www..../news">News</a></li>
-        <li><a href="http://www..../contact">Contact</a></li>
       </ul>
       <p class="datetime_current">
           <%= I18n.t 'app.now' %> <%= I18n.l Time.now %>
