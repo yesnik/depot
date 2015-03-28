@@ -60,7 +60,8 @@ class ProductsController < ApplicationController
     if @product.destroy
       message = I18n.t 'app.notice.destroyed'
     else
-      message = I18n.t 'app.notice.not_destroyed'
+      message = (I18n.t 'app.notice.not_destroyed') + ': ' +
+        @product.errors.full_messages.first
     end
     respond_to do |format|
       format.html { redirect_to products_url, notice: message }
