@@ -65,7 +65,9 @@ class LineItemsController < ApplicationController
       @line_item.save
     end
     respond_to do |format|
-      format.html { redirect_to cart_url(@line_item.cart.id), notice: 'Line item was successfully destroyed.' }
+      format.html do
+        redirect_to store_url, notice: I18n.t('activerecord.attributes.line_item.messages.delete_successful')
+      end
       format.json { head :no_content }
     end
   end

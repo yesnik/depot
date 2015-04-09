@@ -5,5 +5,9 @@ one:
   cart_id: 1
 
 two:
-  product_id: 1
+  product_id: 2
+  cart_id: 1
+
+three:
+  product_id: 3
   cart_id: 1

@@ -1,6 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 ruby_book:
+  id: 1
   title: Programming Ruby 1.9
   description:
     Ruby is the greate language for all
@@ -9,24 +10,28 @@ ruby_book:
   price: 51.29
 
 one:
+  id: 2
   title: MyString
-  description: MyText
+  description: MyText Ruby is the greate language for all
   image_url: MyString
   price: 9.99
 
 two:
+  id: 3
   title: MyString
-  description: MyText
+  description: MyText Ruby is the greate language for all
   image_url: MyString
   price: 9.99
 
 history:
+  id: 4
   title: 'History of Russia'
   description: 'This is a nice book about Russian history'
   image_url: 'russia_history.jpg'
   price: 30
 
 biology:
+  id: 5
   title: 'Biology'
   description: 'This is a nice book about Biology'
   image_url: 'biology.jpg'

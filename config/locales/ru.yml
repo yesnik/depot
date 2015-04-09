@@ -11,6 +11,9 @@ ru:
         title: 'Заголовок'
         image_url: 'URL изображения'
         terms_of_service: 'Согласиться с условиями'
+      line_item:
+        messages:
+          delete_successful: 'Товар успешно удален из корзины'
     errors:
       messages:
         greater_than_or_equal_to: "должно быть больше или равно {{count}}"

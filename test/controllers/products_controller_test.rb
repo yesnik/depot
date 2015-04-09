@@ -4,7 +4,7 @@ require 'test_helper'
 class ProductsControllerTest < ActionController::TestCase
   setup do
     @product = products(:one)
-    @product2 = products(:two)
+    @product2 = products(:biology)
     @update = {
       title: 'Hello World',
       description: 'Nice description of Hello World',
