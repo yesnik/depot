@@ -5,6 +5,9 @@ ru:
       cart: 'корзина'
       line_item: 'товар корзины'
     attributes:
+      cart:
+        messages:
+          empty_cart: 'Очистить корзину'
       product:
         price: 'Цена'
         description: 'Описание'

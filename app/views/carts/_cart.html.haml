@@ -9,4 +9,4 @@
     %td
   %tr
 
-= button_to 'Empty cart', cart, method: :delete, data: { confirm: 'Are you sure?' }
+= button_to I18n.t('activerecord.attributes.cart.messages.empty_cart'), cart, method: :delete, remote: true
