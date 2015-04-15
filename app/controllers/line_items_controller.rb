@@ -65,6 +65,10 @@ class LineItemsController < ApplicationController
       @line_item.save
     end
     respond_to do |format|
+      format.js do
+        @cart = current_cart
+
+      end
       format.html do
         redirect_to store_url, notice: I18n.t('activerecord.attributes.line_item.messages.delete_successful')
       end
