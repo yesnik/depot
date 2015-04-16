@@ -1,0 +1,17 @@
+$(function () {
+var $cart = $('#cart'),
+line_items_exists = #{@cart.line_items.present? ? 'true' : 'false'};
+
+if ($cart.find('tr').size === 1) {
+$cart.show('blind', 1000);
+}
+if (line_items_exists) {
+$cart.html("#{escape_javascript render(@cart)}");
+$('#current_item').css({'background-color':'#88ff88'}).
+animate({'background-color':'#114411'}, 1000);
+} else {
+$cart.show().fadeOut('normal', function () {
+$(this).html('');
+});
+}
+});

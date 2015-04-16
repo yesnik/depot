@@ -1,0 +1,12 @@
+%h1 Устранение конфликта при редактировании
+%p Пока вы изменяли запись, кто-то успел изменить ее до вас.
+%h3 Ваши сохраняемые данные
+%pre
+  - params[:product].each do |name, value|
+    = h name.humanize
+    \: #{h value}
+%h3 Данные, сохраненные кем-то другим
+= render 'form'
+= link_to 'Show', @product
+|
+= link_to 'Back', products_path

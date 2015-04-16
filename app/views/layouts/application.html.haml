@@ -1,0 +1,41 @@
+!!!
+/ START:head
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    / START_HIGHLIGHT
+    %title Pragprog Books Online Store
+    / END_HIGHLIGHT
+    = stylesheet_link_tag    "application", media: "all"
+    / <label id="code.slt"/>
+    = javascript_include_tag "application"
+    / <label id="code.jlt"/>
+    = csrf_meta_tags
+    / <label id="code.csrf"/>
+  / END:head
+  %body{:class => "#{controller.controller_name}"}
+    / START_HIGHLIGHT
+    #banner
+      %a{:href => "/", :title => "На главную"}
+        = image_tag("logo.png")
+      = @page_title || "Pragmatic Bookshelf"
+    #columns
+      #side
+        #cart
+          - if @cart
+            = hidden_div_if(@cart.line_items.empty?, id: 'cart') do
+              = render @cart
+        %ul
+          %li
+            %a{:href => "/"} Главная
+          %li
+            %a{:href => "/products/"} Управление товарами
+        %p.datetime_current
+          = I18n.t 'app.now'
+          = I18n.l Time.now
+      #main
+        / END_HIGHLIGHT
+        = yield
+        / <label id="code.depot.e.include"/>
+        / START_HIGHLIGHT
+    / END_HIGHLIGHT
