@@ -8,7 +8,7 @@ class StoreControllerTest < ActionController::TestCase
     assert_select '#columns #side a', minimum: 2
     assert_select '#main .entry', Product.all.size
     assert_select 'h3', 'Programming Ruby 1.9'
-    assert_select '.datetime_current', /Сейчас.+/
+    assert_select '.datetime_current', /Сейча.+/
     assert_select '.price', /[,\d]+\.\d\d\sруб/
   end
 
