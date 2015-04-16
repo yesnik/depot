@@ -1,22 +1,31 @@
 ru:
   activerecord:
     models:
-      product: 'продукт'
       cart: 'корзина'
       line_item: 'товар корзины'
+      order: 'заказ'
+      product: 'продукт'
     attributes:
       cart:
         messages:
+          checkout: 'Оформить заказ'
           empty_cart: 'Очистить корзину'
+          cart_is_empty: 'Нельзя оформить заказ при пустой корзине'
+      line_item:
+        messages:
+          delete_successful: 'Товар успешно удален из корзины'
+      order:
+        name: 'Ваше имя'
+        address: 'Адрес доставки'
+        email: 'Email'
+        pay_type: 'Способ платежа'
+        submit: 'Отправить заказ'
       product:
         price: 'Цена'
         description: 'Описание'
         title: 'Заголовок'
         image_url: 'URL изображения'
         terms_of_service: 'Согласиться с условиями'
-      line_item:
-        messages:
-          delete_successful: 'Товар успешно удален из корзины'
     errors:
       messages:
         greater_than_or_equal_to: "должно быть больше или равно {{count}}"

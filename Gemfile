@@ -34,6 +34,9 @@ gem 'hirb',        group: :development
 # Гем для поддержки синтаксиса Haml в представлениях
 gem "haml"
 
+# Scaffolding с использованием haml шаблонов
+gem "haml-rails", "~> 0.9"
+
 group :development, :test do
   # Гем для поддержки Rspec-тестов
   gem 'rspec-rails', '~> 3.0'

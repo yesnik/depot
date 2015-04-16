@@ -1,0 +1,31 @@
+= form_for(@order) do |f|
+  - if @order.errors.any?
+    %div#error_explanation
+      %h2 Возникли ошибки
+
+      %ul
+      - @order.errors.full_messages.each do |message|
+        %li= message
+
+  .field
+    = f.label :name
+    %br
+    = f.text_field :name, size: 40
+
+  .field
+    = f.label :address
+    %br
+    = f.text_area :address, rows: 3, cols: 40
+
+  .field
+    = f.label :email
+    %br
+    = f.text_field :email, size: 40
+
+  .field
+    = f.label :pay_type
+    %br
+    = f.select :pay_type, Order::PAYMENT_TYPES, prompt: 'Выберите метод платежа'
+
+  .actions
+    = f.submit I18n.t('activerecord.attributes.order.submit')
