@@ -20,6 +20,8 @@ ru:
         email: 'Email'
         pay_type: 'Способ платежа'
         submit: 'Отправить заказ'
+        messages:
+          thank_you: 'Благодарим за заказ. Мы свяжемся с Вами в ближайшее время.'
       product:
         price: 'Цена'
         description: 'Описание'
@@ -31,6 +33,10 @@ ru:
         greater_than_or_equal_to: "должно быть больше или равно {{count}}"
         blank: 'не может быть пустым'
       models:
+        order:
+          attributes:
+            pay_type:
+              inclusion: 'имеет недопустимое значение'
         product:
           attributes:
             title:
@@ -54,9 +60,6 @@ ru:
     notice:
       destroyed: 'Элемент успешно удален'
       not_destroyed: 'Элемент не удалось удалить'
-  errors:
-    messages:
-      taken: 'с таким значением уже есть в базе данных'
   time:
     formats:
       statement_special: "%B/%Y г."

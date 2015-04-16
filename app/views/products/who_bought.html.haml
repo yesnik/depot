@@ -1,0 +1,19 @@
+%h1 Who bought #{@product.title}
+
+%p Обновлено #{@latest_order.try(:updated_at)}
+
+- @product.orders.each do |order|
+  %h3 Заказ № #{order.id}
+  %p Shipped to #{order.address}
+  %table
+    %tr
+      %th Продукт
+      %th Количество
+      %th Общая цена
+    - order.line_items.each do |item|
+      %tr
+        %td= item.product.title
+        %td= item.quantity
+        %td= number_to_currency item.total_price
+    %tr
+      %td{colspan: 3, align: 'right'} Итого: #{ number_to_currency order.line_items.map(&:total_price).sum }
