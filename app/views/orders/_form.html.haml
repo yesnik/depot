@@ -23,9 +23,10 @@
     = f.text_field :email, size: 40
 
   .field
-    = f.label :pay_type
+    = f.label :payment_type
     %br
-    = f.select :pay_type, Order::PAYMENT_TYPES, prompt: 'Выберите метод платежа'
+    = f.collection_select(:payment_type_id, PaymentType.all, :id, :title,
+                          prompt: I18n.t('activerecord.attributes.order.messages.chose_payment_type'))
 
   .actions
     = f.submit I18n.t('activerecord.attributes.order.submit')

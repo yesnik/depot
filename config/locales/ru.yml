@@ -18,10 +18,11 @@ ru:
         name: 'Ваше имя'
         address: 'Адрес доставки'
         email: 'Email'
-        pay_type: 'Способ платежа'
+        payment_type: 'Способ платежа'
         submit: 'Отправить заказ'
         messages:
-          thank_you: 'Благодарим за заказ. Мы свяжемся с Вами в ближайшее время.'
+          chose_payment_type: 'Выберите метод платежа'
+          thank_you: 'Благодарим за заказ. Мы свяжемся с Вами в ближайшее время'
       product:
         price: 'Цена'
         description: 'Описание'
@@ -35,7 +36,7 @@ ru:
       models:
         order:
           attributes:
-            pay_type:
+            payment_type_id:
               inclusion: 'имеет недопустимое значение'
         product:
           attributes:
@@ -84,3 +85,6 @@ ru:
       one: 'просмотр'
       few: 'просмотра'
       many: 'просмотров'
+  errors:
+    messages:
+      taken: 'с таким значением уже есть в базе данных'

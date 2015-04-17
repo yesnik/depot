@@ -1,0 +1,7 @@
+card:
+  id: 1
+  title: 'Карта'
+
+cash:
+  id: 2
+  title: 'Наличные'

@@ -6,7 +6,7 @@ RSpec.describe "orders/edit", :type => :view do
       :name => "MyString",
       :address => "MyText",
       :email => "MyString",
-      :pay_type => "MyString"
+      :payment_type => "MyString"
     ))
   end
 
@@ -21,7 +21,7 @@ RSpec.describe "orders/edit", :type => :view do
 
       assert_select "input#order_email[name=?]", "order[email]"
 
-      assert_select "input#order_pay_type[name=?]", "order[pay_type]"
+      assert_select "input#order_payment_type[name=?]", "order[payment_type]"
     end
   end
 end

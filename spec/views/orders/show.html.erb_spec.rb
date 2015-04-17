@@ -6,7 +6,7 @@ RSpec.describe "orders/show", :type => :view do
       :name => "Name",
       :address => "MyText",
       :email => "Email",
-      :pay_type => "Pay Type"
+      :payment_type => "Pay Type"
     ))
   end
 
