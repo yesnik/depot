@@ -33,13 +33,13 @@ class OrdersController < ApplicationController
     @order = Order.new(order_params)
     @order.add_line_items_from_cart(@cart)
 
-    p '============================================='
-    p @order.inspect
-
     respond_to do |format|
       if @order.save
         Cart.destroy(session[:cart_id])
         session[:cart_id] = nil
+
+        OrderNotifier.received(@order).deliver
+
         format.html { redirect_to store_url, notice: I18n.t('activerecord.attributes.order.messages.thank_you') }
         format.json { render :show, status: :created, location: @order }
       else

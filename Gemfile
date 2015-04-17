@@ -31,6 +31,9 @@ gem 'spring',        group: :development
 # Гем для отображещия таблиц в консоли Rails
 gem 'hirb',        group: :development
 
+# Гем для показа отправленных сообщений в браузере
+gem "letter_opener", :group => :development
+
 # Гем для поддержки синтаксиса Haml в представлениях
 gem "haml"
 

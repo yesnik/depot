@@ -1,0 +1,9 @@
+%h3 Заказ из Pragmatic Order отправлен
+%p Это сообщение уведомляет Вас, что мы отправили ваш недавний заказ:
+
+%table
+  %tr
+    %th{colspan:2} К-во
+    %th Описание
+
+= render @order.line_items
