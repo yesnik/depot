@@ -27,6 +27,11 @@
     %br
     = f.collection_select(:payment_type_id, PaymentType.all, :id, :title,
                           prompt: I18n.t('activerecord.attributes.order.messages.chose_payment_type'))
+  - if @order.persisted?
+    .field
+      = f.label :ship_date
+      %br
+      = f.text_field :ship_date, size: 10
 
   .actions
     = f.submit I18n.t('activerecord.attributes.order.submit')
