@@ -27,9 +27,11 @@
               = render @cart
         %ul
           %li
-            %a{:href => "/"} Главная
+            = link_to 'Главная', '/'
           %li
-            %a{:href => "/products/"} Управление товарами
+            = link_to 'Управление товарами', products_path
+          %li
+            = link_to  'Заказы', orders_path
         %p.datetime_current
           = I18n.t 'app.now'
           = I18n.l Time.now
