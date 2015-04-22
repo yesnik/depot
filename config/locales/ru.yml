@@ -29,9 +29,10 @@ ru:
         password: 'Пароль'
         password_confirmation: 'Подтверждение пароля'
         messages:
-          created: "Пользователь %{name} был успешно создан."
+          created: "Пользователь %{name} был успешно создан"
           create_user: 'Создать пользователя'
-          updated: "Пользователь %{name} был успешно обновлен."
+          deleted: "Пользователь %{name} успешно удален"
+          updated: "Пользователь %{name} был успешно обновлен"
       product:
         price: 'Цена'
         description: 'Описание'
@@ -61,6 +62,8 @@ ru:
           attributes:
             password_confirmation:
               confirmation: 'должно совпадать с полем Пароль'
+          messages:
+            cant_delete_last_user: 'Нельзя удалить из базы единственного пользователя'
   app:
     controllers:
       session:

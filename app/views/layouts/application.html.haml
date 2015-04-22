@@ -28,10 +28,11 @@
         %ul
           %li
             = link_to 'Главная', '/'
-          %li
-            = link_to 'Управление товарами', products_path
-          %li
-            = link_to  'Заказы', orders_path
+          - if session[:user_id]
+            %li= link_to 'Управление товарами', products_path
+            %li= link_to  'Заказы', orders_path
+            %li= link_to  'Пользователи', users_path
+
         %p.datetime_current
           = I18n.t 'app.now'
           = I18n.l Time.now
