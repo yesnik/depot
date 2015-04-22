@@ -1,3 +1,4 @@
+# encoding: utf-8
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
@@ -28,7 +29,10 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
+        format.html do
+          redirect_to users_path,
+                      notice: I18n.t('activerecord.attributes.user.messages.created', name: @user.name)
+        end
         format.json { render :show, status: :created, location: @user }
       else
         format.html { render :new }

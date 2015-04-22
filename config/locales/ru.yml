@@ -5,6 +5,7 @@ ru:
       line_item: 'товар корзины'
       order: 'заказ'
       product: 'продукт'
+      user: 'пользователь'
     attributes:
       cart:
         messages:
@@ -23,6 +24,9 @@ ru:
         messages:
           chose_payment_type: 'Выберите метод платежа'
           thank_you: 'Благодарим за заказ. Мы свяжемся с Вами в ближайшее время'
+      user:
+        messages:
+          created: "Пользователь %{name} был успешно создан."
       product:
         price: 'Цена'
         description: 'Описание'
