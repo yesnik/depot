@@ -1,5 +1,9 @@
+# encoding: utf-8
 class LineItemsController < ApplicationController
   before_action :set_line_item, only: [:show, :edit, :update, :destroy]
+
+  # Разрешим неавторизованному юзеру создавать товарные позиции
+  skip_before_action :authorize, only: :create
 
   # GET /line_items
   # GET /line_items.json

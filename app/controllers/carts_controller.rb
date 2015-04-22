@@ -1,5 +1,8 @@
 # encoding: utf-8
 class CartsController < ApplicationController
+  # Разрешим неавторизованному юзеру создавать, обновлять и удалять корзины
+  skip_before_action :authorize, only: [:create, :update, :destroy]
+
   before_action :set_cart, only: [:show, :edit]
 
   # GET /carts

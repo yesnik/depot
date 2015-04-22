@@ -66,6 +66,7 @@ ru:
       session:
         messages:
           logout: 'Сеанс работы завершен'
+          authorize_please: 'Пожалуйста, авторизуйтесь'
         errors:
           auth_failed: 'Неверная комбинация имени и пароля'
     models:

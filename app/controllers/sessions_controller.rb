@@ -1,5 +1,8 @@
 # encoding: utf-8
 class SessionsController < ApplicationController
+  # Пропускаем авторизацию для страницы регистрации
+  skip_before_action :authorize
+
   def new
 
   end
