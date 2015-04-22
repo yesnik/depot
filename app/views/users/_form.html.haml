@@ -11,6 +11,9 @@
     = f.text_field :name
   .field
     = f.label :password
-    = f.text_field :password
+    = f.password_field :password
+  .field
+    = f.label :password_confirmation
+    = f.password_field :password_confirmation
   .actions
-    = f.submit 'Save'
+    = f.submit t('activerecord.attributes.user.messages.create_user')

@@ -25,8 +25,12 @@ ru:
           chose_payment_type: 'Выберите метод платежа'
           thank_you: 'Благодарим за заказ. Мы свяжемся с Вами в ближайшее время'
       user:
+        name: 'Имя пользователя'
+        password: 'Пароль'
+        password_confirmation: 'Подтверждение пароля'
         messages:
           created: "Пользователь %{name} был успешно создан."
+          create_user: 'Создать пользователя'
           updated: "Пользователь %{name} был успешно обновлен."
       product:
         price: 'Цена'
@@ -53,6 +57,10 @@ ru:
               not_a_number: 'должно быть числом'
             terms_of_service:
               accepted: 'необходимо принять'
+        user:
+          attributes:
+            password_confirmation:
+              confirmation: 'должно совпадать с полем Пароль'
   app:
     models:
       updated: 'Запись успешно обновлена'

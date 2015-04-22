@@ -1,4 +1,4 @@
-%h1 Listing users
+%h1 Список пользователей
 
 - if notice
   %p#notice= notice
@@ -6,8 +6,8 @@
 %table
   %thead
     %tr
-      %th Name
-      %th Password
+      %th Имя
+      %th Пароль
       %th
       %th
       %th
@@ -23,4 +23,4 @@
 
 %br
 
-= link_to 'New User', new_user_path
+= link_to t('activerecord.attributes.user.messages.create_user'), new_user_path
