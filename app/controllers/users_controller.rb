@@ -30,7 +30,7 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.save
         format.html do
-          redirect_to users_path,
+          redirect_to users_url,
                       notice: I18n.t('activerecord.attributes.user.messages.created', name: @user.name)
         end
         format.json { render :show, status: :created, location: @user }
@@ -46,7 +46,8 @@ class UsersController < ApplicationController
   def update
     respond_to do |format|
       if @user.update(user_params)
-        format.html { redirect_to @user, notice: 'User was successfully updated.' }
+        format.html { redirect_to users_url,
+                                  notice: t('activerecord.attributes.user.messages.updated', name: @user.name) }
         format.json { render :show, status: :ok, location: @user }
       else
         format.html { render :edit }

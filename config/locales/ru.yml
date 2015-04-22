@@ -27,6 +27,7 @@ ru:
       user:
         messages:
           created: "Пользователь %{name} был успешно создан."
+          updated: "Пользователь %{name} был успешно обновлен."
       product:
         price: 'Цена'
         description: 'Описание'
