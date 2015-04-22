@@ -62,6 +62,12 @@ ru:
             password_confirmation:
               confirmation: 'должно совпадать с полем Пароль'
   app:
+    controllers:
+      session:
+        messages:
+          logout: 'Сеанс работы завершен'
+        errors:
+          auth_failed: 'Неверная комбинация имени и пароля'
     models:
       updated: 'Запись успешно обновлена'
       created: 'Запись успешно создана'
