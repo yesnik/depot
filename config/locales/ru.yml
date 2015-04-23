@@ -25,6 +25,7 @@ ru:
           chose_payment_type: 'Выберите метод платежа'
           thank_you: 'Благодарим за заказ. Мы свяжемся с Вами в ближайшее время'
       user:
+        current_password: 'Текущий пароль'
         name: 'Имя пользователя'
         password: 'Пароль'
         password_confirmation: 'Подтверждение пароля'
@@ -60,6 +61,8 @@ ru:
               accepted: 'необходимо принять'
         user:
           attributes:
+            current_password:
+              invalid: 'неправильный'
             password_confirmation:
               confirmation: 'должно совпадать с полем Пароль'
           messages:

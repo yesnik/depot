@@ -44,8 +44,15 @@ class UsersController < ApplicationController
   # PATCH/PUT /users/1
   # PATCH/PUT /users/1.json
   def update
+    current_password = params.delete(:current_password)
+    unless @user.authenticate(current_password)
+      @user.errors.add(:current_password, t('activerecord.errors.models.user.attributes.current_password.invalid'))
+    end
+    p '==============================='
+    p current_password
+
     respond_to do |format|
-      if @user.update(user_params)
+      if @user.errors.empty? and @user.update(user_params)
         format.html { redirect_to users_url,
                                   notice: t('activerecord.attributes.user.messages.updated', name: @user.name) }
         format.json { render :show, status: :ok, location: @user }

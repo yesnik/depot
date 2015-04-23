@@ -1,9 +1,14 @@
 # encoding: utf-8
 class User < ActiveRecord::Base
   validates :name, presence: true, uniqueness: true
+  validates :password, presence: true
   has_secure_password
 
   after_destroy :ensure_an_admin_remains
+
+  def valid_password?(password)
+    BCrypt::Password.create(password) == password_digest
+  end
 
   private
 

@@ -9,6 +9,10 @@
   .field
     = f.label :name
     = f.text_field :name
+  - if params[:action] == "edit" || params[:action] == "update"
+    .field
+      = label_tag :current_password
+      = password_field_tag :current_password
   .field
     = f.label :password
     = f.password_field :password
