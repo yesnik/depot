@@ -1,4 +1,4 @@
-%h1 Listing products
+%h1= t('activerecord.attributes.product.messages.list')
 
 - if notice
   %p#notice= notice
@@ -11,14 +11,12 @@
       
       %td.list_description
         %dl
-          %dt= product.title
+          %dt= link_to product.title, product
           %dd= truncate(strip_tags(product.description), length: 80)
       
       %td.list_actions
-        = link_to 'Показать', product
+        = link_to t('app.actions.edit'), edit_product_path(product)
         %br/
-        = link_to 'Ред.', edit_product_path(product)
-        %br/
-        = link_to 'Удалить', product, method: :delete, data: { confirm: I18n.t('app.delete_confirm') }
+        = link_to t('app.actions.destroy'), product, method: :delete, data: { confirm: I18n.t('app.delete_confirm') }
 
-%p= link_to 'New product', new_product_path
+%p= link_to t('helpers.submit.product.create'), new_product_path

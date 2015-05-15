@@ -14,8 +14,8 @@
         %td= order.address
         %td= order.email
         %td= order.payment_type.try(:title)
-        %td= link_to 'Show', order
-        %td= link_to 'Edit', edit_order_path(order)
-        %td= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' }
+        %td= link_to t('app.actions.show'), order
+        %td= link_to t('app.actions.edit'), edit_order_path(order)
+        %td= link_to t('app.actions.destroy'), order, method: :delete, data: { confirm: 'Are you sure?' }
 %br/
-= link_to 'New Order', new_order_path
+= link_to t('helpers.submit.order.create'), new_order_path

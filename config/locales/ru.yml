@@ -36,8 +36,10 @@ ru:
         password_confirmation: 'Подтверждение пароля'
         messages:
           created: "Пользователь %{name} был успешно создан"
-          create_user: 'Создать пользователя'
+          creating: 'Создание пользователя'
           deleted: "Пользователь %{name} успешно удален"
+          editing: 'Редактирование пользователя'
+          list: 'Список пользователей'
           updated: "Пользователь %{name} был успешно обновлен"
       product:
         price: 'Цена'
@@ -45,6 +47,9 @@ ru:
         title: 'Заголовок'
         image_url: 'URL изображения'
         terms_of_service: 'Согласиться с условиями'
+        messages:
+          editing: 'Редактирование товара'
+          list: 'Список товаров'
     errors:
       messages:
         greater_than_or_equal_to: "должно быть больше или равно {{count}}"
@@ -73,6 +78,12 @@ ru:
           messages:
             cant_delete_last_user: 'Нельзя удалить из базы единственного пользователя'
   app:
+    actions:
+      back: 'Назад'
+      create: 'Создать'
+      destroy: 'Удалить'
+      edit: 'Редактировать'
+      show: 'Показать'
     controllers:
       session:
         messages:
@@ -92,6 +103,19 @@ ru:
     notice:
       destroyed: 'Элемент успешно удален'
       not_destroyed: 'Элемент не удалось удалить'
+  helpers:
+    submit:
+      create: 'Создать'
+      update: 'Обновить'
+      order:
+        create: 'Создать заказ'
+        update: 'Обновить заказ'
+      product:
+        create: 'Создать товар'
+        update: 'Обновить товар'
+      user:
+        create: 'Создать пользователя'
+        update: 'Обновить пользователя'
   time:
     formats:
       statement_special: "%B/%Y г."

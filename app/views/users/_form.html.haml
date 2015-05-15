@@ -11,8 +11,8 @@
     = f.text_field :name
   - if params[:action] == "edit" || params[:action] == "update"
     .field
-      = label_tag :current_password
-      = password_field_tag :current_password
+      = f.label :current_password
+      = f.password_field :current_password
   .field
     = f.label :password
     = f.password_field :password
@@ -20,4 +20,4 @@
     = f.label :password_confirmation
     = f.password_field :password_confirmation
   .actions
-    = f.submit t('activerecord.attributes.user.messages.create_user')
+    = f.submit

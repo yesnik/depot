@@ -1,7 +1,7 @@
-%h1 Editing user
+%h1= t('activerecord.attributes.user.messages.editing')
 
 = render 'form'
 
-= link_to 'Show', @user
+= link_to t('app.actions.show'), @user
 \|
-= link_to 'Back', users_path
+= link_to t('app.actions.back'), users_path

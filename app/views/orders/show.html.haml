@@ -1,17 +1,17 @@
 - if notice
   %p#notice= notice
 %p
-  %strong Name:
+  %strong= t('activerecord.attributes.order.name')
   = @order.name
 %p
-  %strong Address:
+  %strong= t('activerecord.attributes.order.address')
   = @order.address
 %p
-  %strong Email:
+  %strong= t('activerecord.attributes.order.email')
   = @order.email
 %p
-  %strong Pay type:
-  = @order.payment_type
-= link_to 'Edit', edit_order_path(@order)
+  %strong= t('activerecord.attributes.order.payment_type')
+  = @order.payment_type.title
+= link_to t('app.actions.edit'), edit_order_path(@order)
 |
-= link_to 'Back', orders_path
+= link_to t('app.actions.back'), orders_path

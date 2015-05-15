@@ -1,8 +1,8 @@
-%h1 Редактирование товара
+%h1= t('activerecord.attributes.product.messages.editing')
 
 = render :partial => 'form'
 
 %p
-  %span= link_to 'Back', products_path
+  %span= link_to t('app.actions.back'), products_path
   |
-  %span= link_to 'Show', @product
+  %span= link_to t('app.actions.show'), @product

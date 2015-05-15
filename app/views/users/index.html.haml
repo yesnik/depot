@@ -1,4 +1,4 @@
-%h1 Список пользователей
+%h1= t('activerecord.attributes.user.messages.list')
 
 - if notice
   %p#notice= notice
@@ -6,21 +6,17 @@
 %table
   %thead
     %tr
-      %th Имя
-      %th Пароль
-      %th
+      %th= t('activerecord.attributes.user.name')
       %th
       %th
 
   %tbody
     - @users.each do |user|
       %tr
-        %td= user.name
-        %td= user.password
-        %td= link_to 'Show', user
-        %td= link_to 'Edit', edit_user_path(user)
-        %td= link_to 'Destroy', user, :method => :delete, :data => { :confirm => 'Are you sure?' }
+        %td= link_to user.name, user
+        %td= link_to t('app.actions.edit'), edit_user_path(user)
+        %td= link_to t('app.actions.destroy'), user, :method => :delete, :data => { :confirm => t('app.delete_confirm') }
 
 %br
 
-= link_to t('activerecord.attributes.user.messages.create_user'), new_user_path
+= link_to t('helpers.submit.user.create'), new_user_path

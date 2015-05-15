@@ -1,5 +1,5 @@
-%h1 Создание пользователя
+%h1= t('activerecord.attributes.user.messages.creating')
 
 = render 'form'
 
-= link_to 'Back', users_path
+= link_to t('app.actions.back'), users_path
