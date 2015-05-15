@@ -1,3 +1,4 @@
+# encoding: utf-8
 # Files in the config/locales directory are used for internationalization
 # and are automatically loaded by Rails. If you want to use locales other
 # than English, add the necessary files in this directory.
@@ -20,7 +21,50 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  activerecord:
+    models:
+      cart: 'cart'
+      line_item: 'item of cart'
+      order:
+        one: 'Order'
+        other: 'Orders'
+      product: 'product'
+      user: 'user'
+    attributes:
+      cart:
+        messages:
+          checkout: 'Checkout order'
+          empty_cart: 'Empty cart'
+          cart_is_empty: 'You cannot checkout when cart is empty'
+      line_item:
+        messages:
+          delete_successful: 'Product was successfully deleted from cart'
+      order:
+        name: 'Name'
+        address: 'Address'
+        email: 'Email'
+        payment_type: 'Payment type'
+        ship_date: 'Ship date'
+        submit: 'Send order'
+        messages:
+          chose_payment_type: 'Chose payment type'
+          created: 'Order was successfully created'
+          destroyed: 'Order was successfully deleted'
+          thank_you: 'Thank you for your order. We will contact you soon.'
   hello: "Hello world"
+  helpers:
+    submit:
+      create: 'Create'
+      update: 'Update'
+      order:
+        create: 'Create order'
+        update: 'Update order'
+      product:
+        create: 'Create product'
+        update: 'Update product'
+      user:
+        create: 'Create user'
+        update: 'Update user'
   app:
     clean_cart: 'Clean cart'
     cart_was_destroyed: 'Cart was successfully destroyed.'
