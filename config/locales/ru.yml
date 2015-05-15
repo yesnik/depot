@@ -3,7 +3,9 @@ ru:
     models:
       cart: 'корзина'
       line_item: 'товар корзины'
-      order: 'заказ'
+      order:
+        one: 'Заказ'
+        other: 'Заказы'
       product: 'продукт'
       user: 'пользователь'
     attributes:
@@ -16,13 +18,16 @@ ru:
         messages:
           delete_successful: 'Товар успешно удален из корзины'
       order:
-        name: 'Ваше имя'
+        name: 'Имя'
         address: 'Адрес доставки'
         email: 'Email'
         payment_type: 'Способ платежа'
+        ship_date: 'Дата отправки'
         submit: 'Отправить заказ'
         messages:
           chose_payment_type: 'Выберите метод платежа'
+          created: 'Заказ успешно создан'
+          destroyed: 'Заказ успешно удален'
           thank_you: 'Благодарим за заказ. Мы свяжемся с Вами в ближайшее время'
       user:
         current_password: 'Текущий пароль'

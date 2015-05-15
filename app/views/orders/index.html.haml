@@ -1,11 +1,11 @@
-%h1 Listing orders
+%h1= t('activerecord.models.order.other')
 %table
   %thead
     %tr
-      %th Name
-      %th Address
-      %th Email
-      %th Pay type
+      %th= t('activerecord.attributes.order.name')
+      %th= t('activerecord.attributes.order.address')
+      %th= t('activerecord.attributes.order.email')
+      %th= t('activerecord.attributes.order.payment_type')
       %th{:colspan => "3"}
   %tbody
     - @orders.each do |order|

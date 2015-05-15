@@ -56,3 +56,6 @@ Product.create(title: 'Rails Test Prescriptions',
 PaymentType.create title: 'Кредитная карта'
 PaymentType.create title: 'Наличные'
 PaymentType.create title: 'Чек'
+
+# Создаем пользователя для админки
+User.create(name: 'admin', password: 'admin', password_confirmation: 'admin')

@@ -63,7 +63,10 @@ class OrdersController < ApplicationController
 
     respond_to do |format|
       if @order.update(order_params)
-        format.html { redirect_to @order, notice: 'Order was successfully updated.' }
+        format.html do
+          redirect_to @order,
+                      notice: I18n.t('activerecord.attributes.order.messages.created')
+        end
         format.json { render :show, status: :ok, location: @order }
       else
         format.html { render :edit }
@@ -77,7 +80,7 @@ class OrdersController < ApplicationController
   def destroy
     @order.destroy
     respond_to do |format|
-      format.html { redirect_to orders_url, notice: 'Order was successfully destroyed.' }
+      format.html { redirect_to orders_url, notice: I18n.t('activerecord.attributes.order.messages.destroyed') }
       format.json { head :no_content }
     end
   end
