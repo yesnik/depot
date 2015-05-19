@@ -23,13 +23,17 @@
 en:
   activerecord:
     models:
-      cart: 'cart'
+      cart: Cart
       line_item: 'item of cart'
       order:
         one: 'Order'
         other: 'Orders'
-      product: 'product'
-      user: 'user'
+      product:
+        one: Product
+        other: Products
+      user:
+        one: User
+        other: Users
     attributes:
       cart:
         messages:
@@ -66,8 +70,29 @@ en:
         create: 'Create user'
         update: 'Update user'
   app:
-    clean_cart: 'Clean cart'
+    txt:
+      total: Total
+      products_catalog: Products catalog
+    page:
+      main: Main page
+    actions:
+      back: 'Back'
+      create: 'Create'
+      destroy: 'Delete'
+      edit: 'Edit'
+      show: 'Show'
+    controllers:
+      session:
+        messages:
+          logout: 'Logout was successfull'
+          authorize_please: 'Please, authorize.'
+        errors:
+          auth_failed: 'Incorrect login or password'
+    models:
+      updated: 'Item was successfully updated'
+      created: 'Item was successfully created'
     cart_was_destroyed: 'Cart was successfully destroyed.'
+    clean_cart: 'Clean cart'
     delete_confirm: 'Are you sure?'
     now: "Now"
     add_to_cart: 'Add to cart'

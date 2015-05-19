@@ -27,11 +27,11 @@
               = render @cart
         %ul
           %li
-            = link_to 'Главная', '/'
+            = link_to t('app.page.main'), root_path
           - if session[:user_id]
-            %li= link_to 'Управление товарами', products_path
-            %li= link_to  'Заказы', orders_path
-            %li= link_to  'Пользователи', users_path
+            %li= link_to t('activerecord.models.product.other'), products_path
+            %li= link_to I18n.t('activerecord.models.order.other'), orders_path
+            %li= link_to t('activerecord.models.user.other'), users_path
 
         %p.datetime_current
           = I18n.t 'app.now'

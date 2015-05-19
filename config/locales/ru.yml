@@ -6,8 +6,12 @@ ru:
       order:
         one: 'Заказ'
         other: 'Заказы'
-      product: 'продукт'
-      user: 'пользователь'
+      product:
+        one: товар
+        other: товары
+      user:
+        one: пользователь
+        other: пользователи
     attributes:
       cart:
         messages:
@@ -78,6 +82,11 @@ ru:
           messages:
             cant_delete_last_user: 'Нельзя удалить из базы единственного пользователя'
   app:
+    page:
+      main: Главная
+    txt:
+      total: Всего
+      products_catalog: Каталог товаров
     actions:
       back: 'Назад'
       create: 'Создать'

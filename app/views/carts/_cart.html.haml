@@ -1,4 +1,4 @@
-%h2.cart_title Корзина
+%h2.cart_title= t('activerecord.models.cart')
 
 %table
   = render(@cart.line_items)

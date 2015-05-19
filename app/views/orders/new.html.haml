@@ -1,8 +1,8 @@
-%h1 Новый заказ
+%h1= t('helpers.submit.order.create')
 
 = render 'form'
 
-= link_to 'Назад', orders_path
+= link_to t('app.actions.back'), orders_path
 
 :javascript
   $('#cart .js-checkout').attr('disabled', true);
