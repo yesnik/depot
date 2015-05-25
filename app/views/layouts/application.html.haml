@@ -4,7 +4,7 @@
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     / START_HIGHLIGHT
-    %title Pragprog Books Online Store
+    %title= @page_title || t('.title')
     / END_HIGHLIGHT
     = stylesheet_link_tag    "application", media: "all"
     / <label id="code.slt"/>
@@ -27,7 +27,7 @@
               = render @cart
         %ul
           %li
-            = link_to t('app.page.main'), root_path
+            = link_to t('.main'), root_path
           - if session[:user_id]
             %li= link_to t('activerecord.models.product.other'), products_path
             %li= link_to I18n.t('activerecord.models.order.other'), orders_path

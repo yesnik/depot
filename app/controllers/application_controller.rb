@@ -9,9 +9,8 @@ class ApplicationController < ActionController::Base
 
   # Метод нужен для поддержки генерации URL-ов, соответствующих локали,
   # хелпером link_to
-  def default_url_options(options={})
-    logger.debug "default_url_options is passed options: #{options.inspect}\n"
-    { :locale => I18n.locale }
+  def default_url_options
+    { locale: I18n.locale }
   end
 
   protected

@@ -1,11 +1,11 @@
 ru:
   activerecord:
     models:
-      cart: 'корзина'
-      line_item: 'товар корзины'
+      cart: корзина
+      line_item: товар корзины
       order:
-        one: 'Заказ'
-        other: 'Заказы'
+        one: Заказ
+        other: Заказы
       product:
         one: товар
         other: товары
@@ -82,49 +82,53 @@ ru:
           messages:
             cant_delete_last_user: 'Нельзя удалить из базы единственного пользователя'
   app:
-    page:
-      main: Главная
     txt:
       total: Всего
       products_catalog: Каталог товаров
     actions:
-      back: 'Назад'
-      create: 'Создать'
-      destroy: 'Удалить'
-      edit: 'Редактировать'
-      show: 'Показать'
+      back: Назад
+      create: Создать
+      destroy: Удалить
+      edit: Редактировать
+      show: Показать
     controllers:
       session:
         messages:
-          logout: 'Сеанс работы завершен'
-          authorize_please: 'Пожалуйста, авторизуйтесь'
+          logout: Сеанс работы завершен
+          authorize_please: Пожалуйста, авторизуйтесь
         errors:
-          auth_failed: 'Неверная комбинация имени и пароля'
+          auth_failed: Неверная комбинация имени и пароля
     models:
-      updated: 'Запись успешно обновлена'
-      created: 'Запись успешно создана'
-    cart_was_destroyed: 'Корзина была успешно очищена'
-    clean_cart: 'Очистить корзину'
-    delete_confirm: 'Вы уверены?'
-    now: "Сейчас"
-    add_to_cart: 'Добавить в корзину'
-    your_page_views: 'У вас'
+      updated: Запись успешно обновлена
+      created: Запись успешно создана
+    cart_was_destroyed: Корзина была успешно очищена
+    clean_cart: Очистить корзину
+    delete_confirm: Вы уверены?
+    now: Сейчас
+    your_page_views: У вас
     notice:
-      destroyed: 'Элемент успешно удален'
-      not_destroyed: 'Элемент не удалось удалить'
+      destroyed: Элемент успешно удален
+      not_destroyed: Элемент не удалось удалить
+  layouts:
+    application:
+      main: Главная
+      title: Прагматичный магазин книг
   helpers:
     submit:
-      create: 'Создать'
-      update: 'Обновить'
+      create: Создать
+      update: Обновить
       order:
-        create: 'Создать заказ'
-        update: 'Обновить заказ'
+        create: Создать заказ
+        update: Обновить заказ
       product:
-        create: 'Создать товар'
-        update: 'Обновить товар'
+        create: Создать товар
+        update: Обновить товар
       user:
-        create: 'Создать пользователя'
-        update: 'Обновить пользователя'
+        create: Создать пользователя
+        update: Обновить пользователя
+  store:
+    index:
+      add_html: Добавить в корзину
   time:
     formats:
       statement_special: "%B/%Y г."
@@ -151,4 +155,4 @@ ru:
       many: 'просмотров'
   errors:
     messages:
-      taken: 'с таким значением уже есть в базе данных'
+      taken: с таким значением уже есть в базе данных

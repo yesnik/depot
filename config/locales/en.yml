@@ -69,12 +69,13 @@ en:
       user:
         create: 'Create user'
         update: 'Update user'
+  store:
+    index:
+      add_html: Add to cart
   app:
     txt:
       total: Total
       products_catalog: Products catalog
-    page:
-      main: Main page
     actions:
       back: 'Back'
       create: 'Create'
@@ -95,11 +96,14 @@ en:
     clean_cart: 'Clean cart'
     delete_confirm: 'Are you sure?'
     now: "Now"
-    add_to_cart: 'Add to cart'
     your_page_views: 'Your views of this page'
     notice:
       destroyed: 'Item was destroyed'
       not_destroyed: 'Item was not destroyed'
+  layouts:
+    application:
+      main: Main page
+      title: Pragmatic bookshelf
   misc:
     kids:
       zero: children
