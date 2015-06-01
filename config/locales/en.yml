@@ -114,3 +114,12 @@ en:
     views:
       one: 'view'
       other: 'views'
+  number:
+    currency:
+      format:
+        unit: "$"
+        precision: 2
+        separator: "."
+        delimiter: ","
+        format: "%u%n"
+

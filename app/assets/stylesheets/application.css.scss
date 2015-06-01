@@ -23,6 +23,26 @@
   color: #282;
   text-align: center;
 
+  .language_menu {
+    position: absolute;
+    right: 25px;
+    top: 5px;
+    padding: 2px 5px;
+
+    li {
+      border-radius: 4px;
+      display: inline-block;
+      padding: 4px;
+      &.current {
+        background: #114411;
+        a {
+          color: white;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+
   img {
     float: left;
   }

@@ -142,8 +142,13 @@ ru:
   number:
     currency:
       format:
+        delimiter: " "
         format: "%n %u"
-        unit: "руб"
+        precision: 2
+        separator: ","
+        significant: false
+        strip_insignificant_zeros: false
+        unit: руб.
   misc:
     kids:
       zero: 'детей'

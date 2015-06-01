@@ -19,6 +19,9 @@
       %a{:href => "/", :title => "На главную"}
         = image_tag("logo.png")
       = @page_title || "Pragmatic Bookshelf"
+      %ul.language_menu
+        %li{:class => "#{cp(url_for(locale: :ru))}"}= link_to 'RU', url_for(locale: :ru)
+        %li{:class => "#{cp(url_for(locale: :en))}"}= link_to 'EN', url_for(locale: :en)
     #columns
       #side
         #cart
