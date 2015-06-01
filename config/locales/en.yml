@@ -37,8 +37,6 @@ en:
     attributes:
       cart:
         messages:
-          checkout: 'Checkout order'
-          empty_cart: 'Empty cart'
           cart_is_empty: 'You cannot checkout when cart is empty'
       line_item:
         messages:
@@ -55,6 +53,10 @@ en:
           created: 'Order was successfully created'
           destroyed: 'Order was successfully deleted'
           thank_you: 'Thank you for your order. We will contact you soon.'
+  carts:
+    cart:
+      checkout: Checkout
+      empty_cart: Empty cart
   hello: "Hello world"
   helpers:
     submit:

@@ -15,72 +15,74 @@ ru:
     attributes:
       cart:
         messages:
-          checkout: 'Оформить заказ'
-          empty_cart: 'Очистить корзину'
-          cart_is_empty: 'Нельзя оформить заказ при пустой корзине'
+          cart_is_empty: Нельзя оформить заказ при пустой корзине
       line_item:
         messages:
-          delete_successful: 'Товар успешно удален из корзины'
+          delete_successful: Товар успешно удален из корзины
       order:
-        name: 'Имя'
-        address: 'Адрес доставки'
-        email: 'Email'
-        payment_type: 'Способ платежа'
-        ship_date: 'Дата отправки'
-        submit: 'Отправить заказ'
+        name: Имя
+        address: Адрес доставки
+        email: Email
+        payment_type: Способ платежа
+        ship_date: Дата отправки
+        submit: Отправить заказ
         messages:
-          chose_payment_type: 'Выберите метод платежа'
-          created: 'Заказ успешно создан'
-          destroyed: 'Заказ успешно удален'
-          thank_you: 'Благодарим за заказ. Мы свяжемся с Вами в ближайшее время'
+          chose_payment_type: Выберите метод платежа
+          created: Заказ успешно создан
+          destroyed: Заказ успешно удален
+          thank_you: Благодарим за заказ. Мы свяжемся с Вами в ближайшее время
       user:
-        current_password: 'Текущий пароль'
-        name: 'Имя пользователя'
-        password: 'Пароль'
-        password_confirmation: 'Подтверждение пароля'
+        current_password: Текущий пароль
+        name: Имя пользователя
+        password: Пароль
+        password_confirmation: Подтверждение пароля
         messages:
           created: "Пользователь %{name} был успешно создан"
-          creating: 'Создание пользователя'
+          creating: Создание пользователя
           deleted: "Пользователь %{name} успешно удален"
-          editing: 'Редактирование пользователя'
-          list: 'Список пользователей'
+          editing: Редактирование пользователя
+          list: Список пользователей
           updated: "Пользователь %{name} был успешно обновлен"
       product:
-        price: 'Цена'
-        description: 'Описание'
-        title: 'Заголовок'
-        image_url: 'URL изображения'
-        terms_of_service: 'Согласиться с условиями'
+        price: Цена
+        description: Описание
+        title: Заголовок
+        image_url: URL изображения
+        terms_of_service: Согласиться с условиями
         messages:
-          editing: 'Редактирование товара'
-          list: 'Список товаров'
+          editing: Редактирование товара
+          list: Список товаров
     errors:
       messages:
         greater_than_or_equal_to: "должно быть больше или равно {{count}}"
-        blank: 'не может быть пустым'
+        blank: не может быть пустым
       models:
         order:
           attributes:
             payment_type_id:
-              inclusion: 'имеет недопустимое значение'
+              inclusion: имеет недопустимое значение
         product:
           attributes:
             title:
-              taken: 'с таким значением уже есть в базе данных'
-              too_short: "должен быть больше"
+              taken: с таким значением уже есть в базе данных
+              too_short: должен быть больше
             price:
               greater_than_or_equal_to: 'должно быть больше или равно {{count}}'
-              not_a_number: 'должно быть числом'
+              not_a_number: должно быть числом
             terms_of_service:
-              accepted: 'необходимо принять'
+              accepted: необходимо принять
         user:
           attributes:
             current_password:
-              invalid: 'неправильный'
+              invalid: неправильный
             password_confirmation:
-              confirmation: 'должно совпадать с полем Пароль'
+              confirmation: должно совпадать с полем Пароль
           messages:
-            cant_delete_last_user: 'Нельзя удалить из базы единственного пользователя'
+            cant_delete_last_user: Нельзя удалить из базы единственного пользователя
+  carts:
+    cart:
+      checkout: Оформить заказ
+      empty_cart: Очистить корзину
   app:
     txt:
       total: Всего

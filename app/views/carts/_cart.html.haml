@@ -9,5 +9,5 @@
     %td
   %tr
 
-= button_to I18n.t('activerecord.attributes.cart.messages.checkout'), new_order_path, class: 'js-checkout', method: :get
-= button_to I18n.t('activerecord.attributes.cart.messages.empty_cart'), cart, method: :delete, remote: true
+= button_to t('.checkout'), new_order_path, class: 'js-checkout', method: :get
+= button_to t('.empty_cart'), cart, method: :delete, remote: true
