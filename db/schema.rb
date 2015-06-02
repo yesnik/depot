@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150422064754) do
+ActiveRecord::Schema.define(version: 20150602142650) do
 
   create_table "carts", force: true do |t|
     t.datetime "created_at"
@@ -56,7 +56,8 @@ ActiveRecord::Schema.define(version: 20150422064754) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.datetime "deleted_at"
-    t.integer  "lock_version", default: 0, null: false
+    t.integer  "lock_version",           default: 0,    null: false
+    t.string   "locale",       limit: 4, default: "ru"
   end
 
   create_table "users", force: true do |t|

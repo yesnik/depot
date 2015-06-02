@@ -27,10 +27,8 @@ ru:
         ship_date: Дата отправки
         submit: Отправить заказ
         messages:
-          chose_payment_type: Выберите метод платежа
           created: Заказ успешно создан
           destroyed: Заказ успешно удален
-          thank_you: Благодарим за заказ. Мы свяжемся с Вами в ближайшее время
       user:
         current_password: Текущий пароль
         name: Имя пользователя
@@ -128,6 +126,10 @@ ru:
       user:
         create: Создать пользователя
         update: Обновить пользователя
+  orders:
+    form:
+      errors_present: Пожалуйста, исправьте ошибки в форме
+      pay_prompt_html: Выберите метод платежа
   store:
     index:
       add_html: Добавить в корзину
@@ -163,3 +165,4 @@ ru:
   errors:
     messages:
       taken: с таким значением уже есть в базе данных
+  thank_you: Спасибо за заказ! Мы свяжемся с Вами в ближайшее время

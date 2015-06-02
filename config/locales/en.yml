@@ -49,10 +49,8 @@ en:
         ship_date: 'Ship date'
         submit: 'Send order'
         messages:
-          chose_payment_type: 'Chose payment type'
           created: 'Order was successfully created'
           destroyed: 'Order was successfully deleted'
-          thank_you: 'Thank you for your order. We will contact you soon.'
   carts:
     cart:
       checkout: Checkout
@@ -71,6 +69,10 @@ en:
       user:
         create: 'Create user'
         update: 'Update user'
+  orders:
+    form:
+      errors_present: Correct errors in form, please
+      pay_prompt_html: Select a payment method
   store:
     index:
       add_html: Add to cart
@@ -122,4 +124,5 @@ en:
         separator: "."
         delimiter: ","
         format: "%u%n"
+  thank_you: Thank you for your order. We will contact you soon.
 

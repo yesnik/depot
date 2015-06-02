@@ -1,7 +1,7 @@
 = form_for(@order) do |f|
   - if @order.errors.any?
     %div#error_explanation
-      %h2 Возникли ошибки
+      %h2= t('.errors_present')
 
       %ul
       - @order.errors.full_messages.each do |message|
@@ -25,8 +25,7 @@
   .field
     = f.label :payment_type
     %br
-    = f.collection_select(:payment_type_id, PaymentType.all, :id, :title,
-                          prompt: I18n.t('activerecord.attributes.order.messages.chose_payment_type'))
+    = f.collection_select(:payment_type_id, PaymentType.all, :id, :title, prompt: t('.pay_prompt_html'))
   - if @order.persisted?
     .field
       = f.label :ship_date

@@ -43,7 +43,7 @@ class OrdersController < ApplicationController
 
         OrderNotifier.received(@order).deliver
 
-        format.html { redirect_to store_url, notice: I18n.t('activerecord.attributes.order.messages.thank_you') }
+        format.html { redirect_to store_url, notice: I18n.t('.thank_you') }
         format.json { render :show, status: :created, location: @order }
       else
         @cart = current_cart
