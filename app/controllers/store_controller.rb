@@ -3,7 +3,7 @@ class StoreController < ApplicationController
   skip_before_action :authorize
 
   def index
-    @products = Product.order(:title)
+    @products = Product.where(locale: I18n.locale).order(:title)
     @cart = current_cart
   end
 end

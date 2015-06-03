@@ -25,6 +25,10 @@
     %br/
     = f.text_field :price
   .field
+    = f.label :locale
+    %br/
+    = f.select(:locale, I18n.available_locales)
+  .field
     = f.check_box :terms_of_service, value: 1
     = f.label :terms_of_service
   .actions

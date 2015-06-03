@@ -44,6 +44,7 @@ ru:
       product:
         price: Цена
         description: Описание
+        locale: Язык
         title: Заголовок
         image_url: URL изображения
         terms_of_service: Согласиться с условиями
