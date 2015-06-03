@@ -79,10 +79,13 @@ Product.create(
     price: 263.50,
     locale: :ru
 )
-
-PaymentType.create title: 'Кредитная карта'
-PaymentType.create title: 'Наличные'
-PaymentType.create title: 'Чек'
+begin
+  PaymentType.create title: 'Кредитная карта'
+  PaymentType.create title: 'Наличные'
+  PaymentType.create title: 'Чек'
+rescue StandardError => e
+  puts "It seems payment_types exist already in DB:\n#{e}\n"
+end
 
 # Создаем пользователя для админки
 User.create(name: 'admin', password: 'admin', password_confirmation: 'admin')
