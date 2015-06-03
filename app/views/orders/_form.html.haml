@@ -24,7 +24,6 @@
   .field
     = f.label :payment_type
     %br
-    - # = f.collection_select(:payment_type_id, PaymentType.all, :id, :title, prompt: t('.pay_prompt_html'))
     = f.select(:payment_type_id, PaymentType.all.map { |pt| [t(".#{pt.title}"), pt.id] }, prompt: t('.pay_prompt_html'))
   - if @order.persisted?
     .field
