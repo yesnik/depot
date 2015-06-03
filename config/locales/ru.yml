@@ -113,7 +113,10 @@ ru:
   layouts:
     application:
       main: Главная
+      orders: Заказы
+      products: Продукты
       title: Прагматичный магазин книг
+      users: Пользователи
   helpers:
     submit:
       create: Создать
@@ -129,6 +132,9 @@ ru:
         update: Обновить пользователя
   orders:
     form:
+      cash: Наличные
+      check: Чек
+      credit_card: Кредитная карта
       errors_present: Пожалуйста, исправьте ошибки в форме
       pay_prompt_html: Выберите метод платежа
   store:

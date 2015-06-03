@@ -71,6 +71,9 @@ en:
         update: 'Update user'
   orders:
     form:
+      cash: Cash
+      check: Check
+      credit_card: Credit card
       errors_present: Correct errors in form, please
       pay_prompt_html: Select a payment method
   store:
@@ -107,7 +110,10 @@ en:
   layouts:
     application:
       main: Main page
+      orders: Orders
+      products: Products
       title: Pragmatic bookshelf
+      users: Users
   misc:
     kids:
       zero: children

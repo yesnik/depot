@@ -80,9 +80,9 @@ Product.create(
     locale: :ru
 )
 begin
-  PaymentType.create title: 'Кредитная карта'
-  PaymentType.create title: 'Наличные'
-  PaymentType.create title: 'Чек'
+  PaymentType.create title: 'credit_card'
+  PaymentType.create title: 'cash'
+  PaymentType.create title: 'check'
 rescue StandardError => e
   puts "It seems payment_types exist already in DB:\n#{e}\n"
 end
