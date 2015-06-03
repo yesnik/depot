@@ -57,8 +57,10 @@ ActiveRecord::Schema.define(version: 20150602142650) do
     t.datetime "updated_at"
     t.datetime "deleted_at"
     t.integer  "lock_version",           default: 0,    null: false
-    t.string   "locale",       limit: 4, default: "ru"
+    t.string   "locale",       limit: 2, default: "ru"
   end
+
+  add_index "products", ["locale"], name: "index_products_on_locale"
 
   create_table "users", force: true do |t|
     t.string   "name"

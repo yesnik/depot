@@ -16,8 +16,10 @@
 # Visit http://www.pragmaticprogrammer.com/titles/rails32 for more book information.
 #---
 # encoding: utf-8
+
 #Product.delete_all
-Product.create(title: 'CoffeeScript',
+Product.create(
+  title: 'CoffeeScript',
   description: 
     %{<p>
         CoffeeScript is JavaScript done right. It provides all of JavaScript's
@@ -27,9 +29,12 @@ Product.create(title: 'CoffeeScript',
     while writing clearer, cleaner, and safer code.
       </p>},
   image_url:   'cs.jpg',    
-  price: 36.00)
-# . . .
-Product.create(title: 'Programming Ruby 1.9',
+  price: 36.00,
+  locale: :en
+)
+
+Product.create(
+  title: 'Programming Ruby 1.9',
   description:
     %{<p>
         Ruby is the fastest growing and most exciting dynamic language
@@ -37,10 +42,12 @@ Product.create(title: 'Programming Ruby 1.9',
         you should add Ruby to your toolbox.
       </p>},
   image_url: 'ruby.jpg',
-  price: 49.95)
-# . . .
+  price: 49.95,
+  locale: :en
+)
 
-Product.create(title: 'Rails Test Prescriptions',
+Product.create(
+  title: 'Rails Test Prescriptions',
   description: 
     %{<p>
         <em>Rails Test Prescriptions</em> is a comprehensive guide to testing
@@ -51,7 +58,27 @@ Product.create(title: 'Rails Test Prescriptions',
         including Cucumber, Shoulda, Machinist, Mocha, and Rcov.
       </p>},
   image_url: 'rtp.jpg',
-  price: 34.95)
+  price: 34.95,
+  locale: :en
+)
+
+Product.create(
+    title: 'Психология продаж',
+    description:
+        %{Это отличнейшая книга по психологии продаж.},
+    image_url: 'http://img1.labirint.ru/books/397088/big.jpg',
+    price: 263.50,
+    locale: :ru
+)
+
+Product.create(
+    title: 'Программируем на python',
+    description:
+        %{Это отличнейшая книга по программированию на python.},
+    image_url: 'https://realpython.com/learn/python-first-steps/images/pythonlogo.jpg',
+    price: 263.50,
+    locale: :ru
+)
 
 PaymentType.create title: 'Кредитная карта'
 PaymentType.create title: 'Наличные'
