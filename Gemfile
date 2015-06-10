@@ -33,6 +33,9 @@ gem "haml"
 # Scaffolding с использованием haml шаблонов
 gem "haml-rails", "~> 0.9"
 
+# Гем для использования postgres
+gem 'pg'
+
 group :development do
   # Spring speeds up development by keeping your application running in the background.
   # Read more: https://github.com/rails/spring
