@@ -30,7 +30,7 @@ Product.create(
       </p>},
   image_url:   'cs.jpg',    
   price: 36.00,
-  locale: :en
+  locale: 'en'
 )
 
 Product.create(
@@ -43,7 +43,7 @@ Product.create(
       </p>},
   image_url: 'ruby.jpg',
   price: 49.95,
-  locale: :en
+  locale: 'en'
 )
 
 Product.create(
@@ -59,7 +59,7 @@ Product.create(
       </p>},
   image_url: 'rtp.jpg',
   price: 34.95,
-  locale: :en
+  locale: 'en'
 )
 
 Product.create(
@@ -68,7 +68,7 @@ Product.create(
         %{Это отличнейшая книга по психологии продаж.},
     image_url: 'http://img1.labirint.ru/books/397088/big.jpg',
     price: 263.50,
-    locale: :ru
+    locale: 'ru'
 )
 
 Product.create(
@@ -77,15 +77,29 @@ Product.create(
         %{Это отличнейшая книга по программированию на python.},
     image_url: 'https://realpython.com/learn/python-first-steps/images/pythonlogo.jpg',
     price: 263.50,
-    locale: :ru
+    locale: 'ru'
 )
+
 begin
-  PaymentType.create title: 'credit_card'
-  PaymentType.create title: 'cash'
-  PaymentType.create title: 'check'
+  PaymentType.destroy_all
+  credit_card = PaymentType.create title: 'credit_card'
+  cash = PaymentType.create title: 'cash'
+  check = PaymentType.create title: 'check'
+
+  Order.create(name: 'Johny', email: 'johny@mail.ru',
+               address: 'Main Street, 12', payment_type: credit_card)
+
+  Order.create(name: 'Leo', email: 'leo@mail.ru',
+               address: 'Laurence Street, 112', payment_type: cash)
+
+  Order.create(name: 'Mike', email: 'mike@ya.ru',
+               address: 'Loft Street, 41', payment_type: check)
+
 rescue StandardError => e
   puts "It seems payment_types exist already in DB:\n#{e}\n"
 end
+
+Order.create
 
 # Создаем пользователя для админки
 User.create(name: 'admin', password: 'admin', password_confirmation: 'admin')

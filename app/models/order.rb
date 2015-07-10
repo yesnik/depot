@@ -5,6 +5,8 @@ class Order < ActiveRecord::Base
 
   validates :name, :address, :email, :payment_type, presence: true
 
+  scope :checks, -> { joins(:payment_type).where(payment_types: {title: 'check'}) }
+
   def add_line_items_from_cart(cart)
     cart.line_items.each do |item|
       #Присвоим свойству cart_id значение nil, чтобы товарная позиция не исчезла при удалении корзины

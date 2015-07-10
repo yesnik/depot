@@ -13,7 +13,7 @@
         %td= order.name
         %td= order.address
         %td= order.email
-        %td= t("#{order.payment_type.title}".to_sym, scope: 'orders.form')
+        %td= t("#{order.payment_type.try(:title)}".to_sym, scope: 'orders.form')
         %td= link_to t('app.actions.show'), order
         %td= link_to t('app.actions.edit'), edit_order_path(order)
         %td= link_to t('app.actions.destroy'), order, method: :delete, data: { confirm: 'Are you sure?' }
