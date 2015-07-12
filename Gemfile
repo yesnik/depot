@@ -33,9 +33,6 @@ gem "haml"
 # Scaffolding с использованием haml шаблонов
 gem "haml-rails", "~> 0.9"
 
-# Гем для использования postgres
-# gem 'pg'
-
 group :development do
   # Spring speeds up development by keeping your application running in the background.
   # Read more: https://github.com/rails/spring
@@ -57,6 +54,11 @@ group :development, :test do
   gem 'capistrano-rails'
   gem 'capistrano-bundler'
   gem 'capistrano-rvm'
+end
+
+group :production do
+  # Гем для использования postgres
+  gem 'pg'
 end
 
 # Use ActiveModel has_secure_password
