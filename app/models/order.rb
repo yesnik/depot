@@ -4,9 +4,10 @@ class Order < ActiveRecord::Base
   belongs_to :payment_type
 
   validates :name, :address, :email, :payment_type, presence: true
-
+  validates :phone, length: {minimum: 6, maximum: 20}
   scope :checks, -> { joins(:payment_type).where(payment_types: {title: 'check'}) }
 
+  before_validation :normalize_phone
   after_create do |order|
     logger.info "=== Order #{order.id} was created ==="
   end
@@ -18,5 +19,11 @@ class Order < ActiveRecord::Base
       #товарную позицию мы добавим к коллекции line_items для заказа
       line_items << item
     end
+  end
+
+  protected
+  
+  def normalize_phone
+    self.phone.gsub!(/[-\s\(\)]/, '')
   end
 end

@@ -46,6 +46,7 @@ en:
         address: 'Address'
         email: 'Email'
         payment_type: 'Payment type'
+        phone: Phone number
         ship_date: 'Ship date'
         submit: 'Send order'
         messages:

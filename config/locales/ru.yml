@@ -23,6 +23,7 @@ ru:
         name: Имя
         address: Адрес доставки
         email: Email
+        phone: Номер телефона
         payment_type: Способ платежа
         ship_date: Дата отправки
         submit: Отправить заказ
@@ -60,6 +61,9 @@ ru:
           attributes:
             payment_type_id:
               inclusion: имеет недопустимое значение
+            phone:
+              too_long: слишком велик (максимум %{count} символов)
+              too_short: слишком мал (минимум %{count} символов)
         product:
           attributes:
             title:
