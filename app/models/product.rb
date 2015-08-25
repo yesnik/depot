@@ -4,6 +4,7 @@ class Product < ActiveRecord::Base
   # подключаем концерн для того, чтобы запись помечалась, как удаленная,
   # а не удалялась. Только нужно добавить поле deleted_at в эту модель
   include Archivable
+  include Loggable
 
   has_many :line_items
   has_many :orders, through: :line_items
