@@ -1,4 +1,6 @@
+# encoding: utf-8
 class Order < ActiveRecord::Base
+  encrypt(:name, :email)
 
   has_many :line_items, dependent: :destroy
   belongs_to :payment_type
@@ -24,6 +26,8 @@ class Order < ActiveRecord::Base
   protected
   
   def normalize_phone
-    self.phone.gsub!(/[-\s\(\)]/, '')
+    self.phone.gsub!(/[-\s\(\)]/, '') if phone
   end
+
+  def after_find; end
 end
