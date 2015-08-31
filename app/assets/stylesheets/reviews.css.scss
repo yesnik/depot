@@ -1,0 +1,33 @@
+.reviews {
+  margin: 10px 0;
+  padding: 0;
+  list-style: none;
+}
+.review {
+  padding: 0;
+  margin: 0 0 10px;
+  border-bottom: 1px dotted #aaa;
+  position: relative;
+}
+.reviews-header {
+  border-bottom: 1px solid #148102;
+  color: #1c4a00;
+  font-family: Arial,Tahoma,sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 18px;
+  margin: 15px 0 10px;
+}
+.review_author {
+  font-size: 12px;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+.review_datetime {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  color: #aaa;
+  font-size: 10px;
+}

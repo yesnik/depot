@@ -173,6 +173,10 @@ ru:
       one: 'просмотр'
       few: 'просмотра'
       many: 'просмотров'
+  reviews:
+    index:
+      no_reviews: Нет отзывов
+      product_reviews: Отзывы
   errors:
     messages:
       taken: с таким значением уже есть в базе данных

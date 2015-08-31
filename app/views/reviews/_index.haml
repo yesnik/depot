@@ -1,0 +1,8 @@
+
+%h4.reviews-header= t('.product_reviews')
+- if @reviews.present?
+  %ul.reviews
+    - @reviews.each do |review|
+      = render 'reviews/review_item', review: review
+- else
+  %p= t('.no_reviews')

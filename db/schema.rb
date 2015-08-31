@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150712031114) do
+ActiveRecord::Schema.define(version: 20150827091841) do
 
   create_table "carts", force: :cascade do |t|
     t.datetime "created_at"
@@ -64,6 +64,17 @@ ActiveRecord::Schema.define(version: 20150712031114) do
   end
 
   add_index "products", ["locale"], name: "index_products_on_locale"
+
+  create_table "reviews", force: :cascade do |t|
+    t.string   "author",          limit: 20
+    t.text     "text"
+    t.integer  "reviewable_id"
+    t.string   "reviewable_type"
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+  end
+
+  add_index "reviews", ["reviewable_type", "reviewable_id"], name: "index_reviews_on_reviewable_type_and_reviewable_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "name",            limit: 255

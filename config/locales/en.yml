@@ -123,6 +123,10 @@ en:
     views:
       one: 'view'
       other: 'views'
+  reviews:
+    index:
+      no_reviews: No reviews
+      product_reviews: Reviews
   number:
     currency:
       format:

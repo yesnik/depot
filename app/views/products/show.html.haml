@@ -14,6 +14,8 @@
   Цена: 
   = @product.price
 
+= render 'reviews/index', reviews: @reviews
+
 = link_to 'Редактировать', edit_product_path(@product)
 |
 = link_to 'Назад', products_path

@@ -1,6 +1,8 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
 
+  # Пропускаем авторизацию для страницы товаров
+  skip_before_action :authorize, only: [:show]
   # GET /products
   # GET /products.json
   def index
@@ -10,6 +12,7 @@ class ProductsController < ApplicationController
   # GET /products/1
   # GET /products/1.json
   def show
+    @reviews = @product.reviews.order('created_at')
   end
 
   # GET /products/new
