@@ -1,0 +1,6 @@
+%h3.new-review-header Новый отзыв
+= semantic_form_for @review do |f|
+  = f.input :author
+  = f.input :text
+  = hidden_field(:product, :id, value: product_id)
+  = f.action :submit, button_html: { disable_with: t('app.notice.wait') }

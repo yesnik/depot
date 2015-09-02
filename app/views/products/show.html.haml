@@ -15,6 +15,7 @@
   = @product.price
 
 = render 'reviews/index', reviews: @reviews
+= render 'reviews/review_form', review: @review, product_id: @product.id
 
 = link_to 'Редактировать', edit_product_path(@product)
 |

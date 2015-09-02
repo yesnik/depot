@@ -3,6 +3,9 @@
   padding: 0;
   list-style: none;
 }
+.new-review-header {
+  margin: 20px 0;
+}
 .review {
   padding: 0;
   margin: 0 0 10px;
@@ -30,4 +33,22 @@
   right: 0px;
   color: #aaa;
   font-size: 10px;
+}
+#new_review {
+  margin-top: 10px;
+  li {
+    list-style: none;
+    label {
+      font-weight: bold;
+    }
+    label:after {
+      content: '';
+      display: block;
+      clear: both;
+    }
+  }
+  textarea {
+    height: 120px;
+    width: 550px;
+  }
 }

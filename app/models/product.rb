@@ -1,5 +1,4 @@
 # encoding: utf-8
-
 class Product < ActiveRecord::Base
   # подключаем концерн для того, чтобы запись помечалась, как удаленная,
   # а не удалялась. Только нужно добавить поле deleted_at в эту модель
@@ -9,6 +8,10 @@ class Product < ActiveRecord::Base
   has_many :line_items
   has_many :orders, through: :line_items
   has_many :reviews, as: :reviewable
+
+  # Позволяем через сущность Product создавать отзывы
+  # Напр.: product.reviews.create author: 'Kenny', text: 'Hello'
+  accepts_nested_attributes_for :reviews, reject_if: :all_blank, allow_destroy: true
 
   before_destroy :ensure_not_referenced_by_any_line_item
 

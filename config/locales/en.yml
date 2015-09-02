@@ -108,6 +108,7 @@ en:
     notice:
       destroyed: 'Item was destroyed'
       not_destroyed: 'Item was not destroyed'
+      wait: Wait...
   layouts:
     application:
       main: Main page

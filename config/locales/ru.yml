@@ -9,6 +9,9 @@ ru:
       product:
         one: товар
         other: товары
+      review:
+        one: отзыв
+        other: отзывы
       user:
         one: пользователь
         other: пользователи
@@ -112,8 +115,18 @@ ru:
     now: Сейчас
     your_page_views: У вас
     notice:
+      wait: Подождите...
       destroyed: Элемент успешно удален
       not_destroyed: Элемент не удалось удалить
+  formtastic:
+    :yes: 'Да'
+    :no: 'Нет'
+    :create: 'Создать %{model}'
+    :update: 'Обновить %{model}'
+    :submit: 'Сохранить %{model}'
+    :cancel: 'Отменить %{model}'
+    :reset: 'Сбросить %{model}'
+    :required: 'обязательно'
   layouts:
     application:
       main: Главная
