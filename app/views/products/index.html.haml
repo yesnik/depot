@@ -1,8 +1,5 @@
 %h1= t('activerecord.attributes.product.messages.list')
 
-- if notice
-  %p#notice= notice
-
 %table.products
   - @products.each do |product|
     %tr{class: "#{cycle('list_line_odd', 'list_line_even')}"}

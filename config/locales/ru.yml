@@ -33,6 +33,7 @@ ru:
         messages:
           created: Заказ успешно создан
           destroyed: Заказ успешно удален
+          updated: Заказ успешно обновлен
       user:
         current_password: Текущий пароль
         name: Имя пользователя
