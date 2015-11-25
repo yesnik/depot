@@ -65,7 +65,7 @@ class OrdersController < ApplicationController
       if @order.update(order_params)
         format.html do
           redirect_to @order,
-                      notice: I18n.t('activerecord.attributes.order.messages.created')
+                      notice: I18n.t('activerecord.attributes.order.messages.updated')
         end
         format.json { render :show, status: :ok, location: @order }
       else

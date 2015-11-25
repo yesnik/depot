@@ -33,6 +33,7 @@ ru:
         messages:
           created: Заказ успешно создан
           destroyed: Заказ успешно удален
+          updated: Заказ успешно обновлен
       user:
         avatar: Аватарка
         current_password: Текущий пароль

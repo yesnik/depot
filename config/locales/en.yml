@@ -50,8 +50,9 @@ en:
         ship_date: 'Ship date'
         submit: 'Send order'
         messages:
-          created: 'Order was successfully created'
-          destroyed: 'Order was successfully deleted'
+          created: Order was successfully created
+          destroyed: Order was successfully deleted
+          updated: Order was successfully updated
       user:
         avatar: Avatar
   carts:

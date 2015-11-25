@@ -1,12 +1,20 @@
 !!!
+/ START:head
 %html
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    / START_HIGHLIGHT
     %title= @page_title || t('.title')
+    / END_HIGHLIGHT
     = stylesheet_link_tag    "application", media: "all"
+    / <label id="code.slt"/>
     = javascript_include_tag "application"
+    / <label id="code.jlt"/>
     = csrf_meta_tags
+    / <label id="code.csrf"/>
+  / END:head
   %body{:class => "#{controller.controller_name}"}
+    / START_HIGHLIGHT
     #banner
       %a{:href => "/", :title => "На главную"}
         = image_tag("logo.png")
@@ -37,3 +45,6 @@
         - if flash[:notice].present?
           %p.flash.flash_notice= flash[:notice]
         = yield
+        / <label id="code.depot.e.include"/>
+        / START_HIGHLIGHT
+    / END_HIGHLIGHT
