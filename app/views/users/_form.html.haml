@@ -9,6 +9,12 @@
   .field
     = f.label :name
     = f.text_field :name
+  .field
+    = f.label :avatar
+    - if @user.avatar.present?
+      = image_tag @user.avatar.url
+      %br
+    = f.file_field :avatar
   - if params[:action] == "edit" || params[:action] == "update"
     .field
       = f.label :current_password

@@ -1,6 +1,11 @@
 # encoding: utf-8
 class UsersController < ApplicationController
+  before_action :test_before1
+  before_action :test_before2, except: :show
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+  after_action :test_after1
+  after_action :test_after2
+  around_action :test_around
 
   # GET /users
   # GET /users.json
@@ -48,8 +53,6 @@ class UsersController < ApplicationController
     unless @user.authenticate(current_password)
       @user.errors.add(:current_password, t('activerecord.errors.models.user.attributes.current_password.invalid'))
     end
-    p '==============================='
-    p current_password
 
     respond_to do |format|
       if @user.errors.empty? and @user.update(user_params)
@@ -90,6 +93,35 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:name, :password, :password_confirmation)
+      params.require(:user).permit(:name, :password, :password_confirmation, :avatar)
+    end
+
+    def test_around
+      p '=== test_around 1'
+      yield
+      p '=== test_around 2'
+    end
+
+    def test_before1
+      p '=== test_before1'
+    end
+
+    def test_before2
+      p '=== test_before2'
+    end
+
+    def test_around
+      p '=== test_around 1'
+      # yield здесь обязателен, иначе будет выведена пустая страница
+      yield
+      p '=== test_around 2'
+    end
+
+    def test_after1
+      p '=== test_after1'
+    end
+
+    def test_after2
+      p '=== test_after2'
     end
 end

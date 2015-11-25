@@ -1,8 +1,5 @@
 %h1= t('activerecord.attributes.user.messages.list')
 
-- if notice
-  %p#notice= notice
-
 %table
   %thead
     %tr
@@ -14,9 +11,9 @@
     - @users.each do |user|
       %tr
         %td= link_to user.name, user
+        %td= image_tag user.avatar.url(:thumb)
         %td= link_to t('app.actions.edit'), edit_user_path(user)
         %td= link_to t('app.actions.destroy'), user, :method => :delete, :data => { :confirm => t('app.delete_confirm') }
-
 %br
 
 = link_to t('helpers.submit.user.create'), new_user_path

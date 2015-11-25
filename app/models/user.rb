@@ -1,10 +1,14 @@
-# encoding: utf-8
+# coding: utf-8
 class User < ActiveRecord::Base
   validates :name, presence: true, uniqueness: true
   validates :password, presence: true
   has_secure_password
 
   after_destroy :ensure_an_admin_remains
+
+  has_attached_file :avatar, styles: {medium: "300x300>", thumb: "100x100>"},
+                             default_url: ":style/user_avatar_missing.png"
+  validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
 
   def valid_password?(password)
     BCrypt::Password.create(password) == password_digest

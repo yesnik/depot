@@ -1,5 +1,7 @@
 %h3= @user.name
 
+= image_tag @user.avatar.url(:medium)
+%br
 = link_to t('app.actions.edit'), edit_user_path(@user)
 \|
 = link_to t('app.actions.back'), users_path

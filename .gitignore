@@ -24,3 +24,4 @@ doc/
 
 # Ignore locum token
 /.locum
+/public

@@ -36,6 +36,9 @@ gem "haml-rails", "~> 0.9"
 # Отображение html-форм
 gem 'formtastic', '~> 3.0'
 
+# Работа с вложениями
+gem "paperclip", "~> 4.3"
+
 group :development do
   # Spring speeds up development by keeping your application running in the background.
   # Read more: https://github.com/rails/spring

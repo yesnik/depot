@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150827091841) do
+ActiveRecord::Schema.define(version: 20151125111708) do
 
   create_table "carts", force: :cascade do |t|
     t.datetime "created_at"
@@ -77,10 +77,14 @@ ActiveRecord::Schema.define(version: 20150827091841) do
   add_index "reviews", ["reviewable_type", "reviewable_id"], name: "index_reviews_on_reviewable_type_and_reviewable_id"
 
   create_table "users", force: :cascade do |t|
-    t.string   "name",            limit: 255
-    t.string   "password_digest", limit: 255
+    t.string   "name",                limit: 255
+    t.string   "password_digest",     limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
 end

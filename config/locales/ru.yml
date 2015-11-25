@@ -34,6 +34,7 @@ ru:
           created: Заказ успешно создан
           destroyed: Заказ успешно удален
       user:
+        avatar: Аватарка
         current_password: Текущий пароль
         name: Имя пользователя
         password: Пароль

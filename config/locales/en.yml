@@ -52,6 +52,8 @@ en:
         messages:
           created: 'Order was successfully created'
           destroyed: 'Order was successfully deleted'
+      user:
+        avatar: Avatar
   carts:
     cart:
       checkout: Checkout
