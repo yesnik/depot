@@ -1,4 +1,4 @@
-class ProductsController < ApplicationController
+class ProductsController < WebsocketRails::BaseController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
 
   # Пропускаем авторизацию для страницы товара
@@ -32,9 +32,13 @@ class ProductsController < ApplicationController
 
     respond_to do |format|
       if @product.save
+        send_message :create_success, task, :namespace => :products
+
         format.html { redirect_to @product, notice: I18n.t('app.models.created') }
         format.json { render :show, status: :created, location: @product }
       else
+        send_message :create_fail, task, :namespace => :products
+
         format.html { render :new }
         format.json { render json: @product.errors, status: :unprocessable_entity }
       end

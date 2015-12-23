@@ -15,3 +15,5 @@
 //= require jquery-ui/effect-blind
 //= require turbolinks
 //= require_tree .
+//= require websocket_rails/main
+
