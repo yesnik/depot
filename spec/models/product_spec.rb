@@ -7,7 +7,9 @@ RSpec.describe Product, type: :model do
   it { is_expected.to validate_presence_of :price }
 
   it do
-  	is_expected.to validate_numericality_of(:price),
-	    greater_than_or_equal_to: 0.01
+  	is_expected.to validate_numericality_of(:price).
+	    is_greater_than_or_equal_to(0.01)
   end
+
+  it { is_expected.to validate_uniqueness_of(:title).case_insensitive }
 end
