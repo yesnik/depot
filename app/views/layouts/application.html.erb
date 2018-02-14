@@ -22,6 +22,9 @@
           <li><a href="http://www..../news">News</a></li>
           <li><a href="http://www..../contact">Contact</a></li>
         </ul>
+        <p class="time">
+          <%= Time.now.to_formatted_s(:long) %>
+        </p>
       </div>
       <div id="main">
         <%= yield %>
