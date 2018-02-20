@@ -1,6 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe Product, type: :model do
+  # Relations
+  it { is_expected.to have_many :line_items }
+  
+  # Validations
   it do
   	is_expected.to validate_length_of(:title).is_at_least(5).
   		with_message('Title length should be minimum 5 characters')

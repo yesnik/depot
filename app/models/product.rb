@@ -1,4 +1,6 @@
 class Product < ApplicationRecord
+  has_many :line_items
+
   validates :description, :image_url, :price, presence: true
   validates :title,
   			length: {minimum: 5,
