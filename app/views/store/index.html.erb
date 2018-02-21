@@ -1,4 +1,7 @@
 <p id="notice"><%= notice %></p>
+
+<p class="visits">Visits: <%= session[:visits_counter] %></p>
+
 <h1>Your Pragmatic Catalog</h1>
 
 <% cache @products do %>
