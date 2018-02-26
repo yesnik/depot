@@ -6,4 +6,7 @@
   <% end %>
 </ul>
 
+<%= button_to 'Empty cart', @cart, method: :delete, 
+  data: { confirm: 'Are you sure?' } %>
+
 <%= link_to 'Back', store_index_path %>
