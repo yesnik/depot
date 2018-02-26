@@ -1,11 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe "line_items/edit", type: :view do
+  let(:line_item) { create :line_item }
+
   before(:each) do
-    @line_item = assign(:line_item, LineItem.create!(
-      :product => nil,
-      :cart => nil
-    ))
+    @line_item = assign(:line_item, line_item)
   end
 
   it "renders the edit line_item form" do

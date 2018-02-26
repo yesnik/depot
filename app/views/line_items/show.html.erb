@@ -2,12 +2,12 @@
 
 <p>
   <strong>Product:</strong>
-  <%= @line_item.product %>
+  <%= @line_item.product.title %>
 </p>
 
 <p>
   <strong>Cart:</strong>
-  <%= @line_item.cart %>
+  <%= @line_item.cart.id %>
 </p>
 
 <%= link_to 'Edit', edit_line_item_path(@line_item) %> |
