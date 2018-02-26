@@ -24,12 +24,14 @@ require 'rails_helper'
 # `rails-controller-testing` gem.
 
 RSpec.describe LineItemsController, type: :controller do
+  let!(:product) { create :product }
+  let!(:cart) { create :cart }
 
   # This should return the minimal set of attributes required to create a valid
   # LineItem. As you add validations to LineItem, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
+    {product_id: product.id, cart_id: cart.id}
   }
 
   let(:invalid_attributes) {
@@ -73,16 +75,17 @@ RSpec.describe LineItemsController, type: :controller do
   end
 
   describe "POST #create" do
+    let(:valid_attributes) { {product_id: product.id} }
     context "with valid params" do
       it "creates a new LineItem" do
         expect {
-          post :create, params: {line_item: valid_attributes}, session: valid_session
+          post :create, params: valid_attributes, session: valid_session
         }.to change(LineItem, :count).by(1)
       end
 
       it "redirects to the created line_item" do
-        post :create, params: {line_item: valid_attributes}, session: valid_session
-        expect(response).to redirect_to(LineItem.last)
+        post :create, params: valid_attributes, session: valid_session
+        expect(response).to redirect_to(Cart.last)
       end
     end
 

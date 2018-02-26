@@ -34,8 +34,7 @@ class LineItemsController < ApplicationController
       if @line_item.save
         session[:visits_counter] = 0
 
-        format.html { redirect_to @line_item.cart,
-          notice: 'Line item was successfully created.' }
+        format.html { redirect_to @line_item.cart }
         format.json { render :show,
           status: :created, location: @line_item }
       else
