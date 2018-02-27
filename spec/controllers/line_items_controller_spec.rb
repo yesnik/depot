@@ -85,7 +85,7 @@ RSpec.describe LineItemsController, type: :controller do
 
       it "redirects to the created line_item" do
         post :create, params: valid_attributes, session: valid_session
-        expect(response).to redirect_to(Cart.last)
+        expect(response).to redirect_to store_index_url
       end
     end
 
@@ -137,7 +137,7 @@ RSpec.describe LineItemsController, type: :controller do
     it "redirects to the line_items list" do
       line_item = LineItem.create! valid_attributes
       delete :destroy, params: {id: line_item.to_param}, session: valid_session
-      expect(response).to redirect_to(line_items_url)
+      expect(response).to redirect_to(store_index_url)
     end
   end
 
