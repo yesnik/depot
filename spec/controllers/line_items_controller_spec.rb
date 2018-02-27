@@ -24,7 +24,7 @@ require 'rails_helper'
 # `rails-controller-testing` gem.
 
 RSpec.describe LineItemsController, type: :controller do
-  let!(:product) { create :product }
+  let!(:product) { create :product, title: 'Ruby book' }
   let!(:cart) { create :cart }
 
   # This should return the minimal set of attributes required to create a valid
@@ -77,9 +77,11 @@ RSpec.describe LineItemsController, type: :controller do
   describe "POST #create" do
     let(:valid_attributes) { {product_id: product.id} }
     context "with valid params" do
-      it "creates a new LineItem" do
+      it "creates a new LineItem via ajax" do
         expect {
-          post :create, params: valid_attributes, session: valid_session
+          post :create, params: valid_attributes,
+            session: valid_session,
+            xhr: true
         }.to change(LineItem, :count).by(1)
       end
 
