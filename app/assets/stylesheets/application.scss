@@ -60,7 +60,7 @@ body, body > p, body > ol, body > ul, body > td {margin: 8px !important}
     padding: 1em 2em;
     background: #141;
 
-    form, div {
+    form {
       display: inline;
     }
 
@@ -119,4 +119,8 @@ body, body > p, body > ol, body > ul, body > td {margin: 8px !important}
   #banner .title {
     display: none;
   }
+}
+
+.hide {
+  display: none;
 }
