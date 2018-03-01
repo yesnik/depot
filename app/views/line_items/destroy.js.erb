@@ -1,0 +1,7 @@
+var $cart = $('#cart');
+
+$cart.html('<%= j render @cart %>');
+
+if ($('#cart tr').length < 2) {
+  $cart.hide();
+}
