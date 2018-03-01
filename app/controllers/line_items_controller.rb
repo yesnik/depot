@@ -63,7 +63,13 @@ class LineItemsController < ApplicationController
   # DELETE /line_items/1
   # DELETE /line_items/1.json
   def destroy
-    @line_item.destroy
+    if @line_item.quantity > 1
+      @line_item.quantity -= 1
+      @line_item.save
+    else
+      @line_item.destroy
+    end
+
     respond_to do |format|
       format.html { redirect_to store_index_url, notice: 'Line item was successfully destroyed.' }
       format.js
