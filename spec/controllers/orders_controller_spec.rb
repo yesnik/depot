@@ -58,8 +58,15 @@ RSpec.describe OrdersController, type: :controller do
   end
 
   describe "GET #new" do
+    context 'when cart is empty' do
+      it 'redirects to store index page' do
+        get :new, params: {}, session: valid_session
+        expect(response).to redirect_to store_index_url
+      end
+    end
+
     it "returns a success response" do
-      get :new, params: {}, session: valid_session
+      get :new, params: {cart_id: line_item.cart.id}, session: valid_session
       expect(response).to be_success
     end
   end
