@@ -65,8 +65,10 @@ RSpec.describe OrdersController, type: :controller do
       end
     end
 
+    let!(:line_item) { create :line_item }
+
     it "returns a success response" do
-      get :new, params: {cart_id: line_item.cart.id}, session: valid_session
+      get :new, params: {}, session: {cart_id: line_item.cart.id}
       expect(response).to be_success
     end
   end
