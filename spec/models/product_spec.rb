@@ -1,9 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe Product, type: :model do
-  # Relations
-  it { is_expected.to have_many :line_items }
-  
+  describe 'relations' do
+    it { is_expected.to have_many :line_items }
+    it { is_expected.to have_many(:orders).through(:line_items) }
+  end
+
   # Validations
   it do
   	is_expected.to validate_length_of(:title).is_at_least(5).
