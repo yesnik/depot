@@ -6,6 +6,7 @@ class Order < ApplicationRecord
   }
 
   has_many :line_items, dependent: :destroy
+  belongs_to :pay_type
 
   validates :name, :address, :email, presence: true
   validates :pay_type, inclusion: {in: pay_types.keys}
