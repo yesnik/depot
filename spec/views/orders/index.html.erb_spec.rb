@@ -13,6 +13,6 @@ RSpec.describe "orders/index", type: :view do
     assert_select "tr>td", :text => order1.name, :count => 1
     assert_select "tr>td", :text => order1.address, :count => 1
     assert_select "tr>td", :text => order1.email.to_s, :count => 1
-    assert_select "tr>td", :text => order1.pay_type, :count => 2
+    assert_select "tr>td", :text => order1.pay_type.title, :count => 2
   end
 end
