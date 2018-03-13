@@ -1,10 +1,4 @@
 class Order < ApplicationRecord
-  enum pay_type: {
-    'Check' => 0,
-    'Credit card' => 1,
-    'Purchase order' => 2
-  }
-
   has_many :line_items, dependent: :destroy
   belongs_to :pay_type
 
