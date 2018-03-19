@@ -1,5 +1,5 @@
 FactoryBot.define do
   factory :pay_type do
-    title "MyString"
+    sequence(:title) { |n| "Pay type #{n}" }
   end
 end
