@@ -10,9 +10,10 @@ RSpec.describe "orders/index", type: :view do
 
   it "renders a list of orders" do
     render
-    assert_select "tr>td", :text => order1.name, :count => 1
-    assert_select "tr>td", :text => order1.address, :count => 1
-    assert_select "tr>td", :text => order1.email.to_s, :count => 1
-    assert_select "tr>td", :text => order1.pay_type.title, :count => 2
+    
+    assert_select "tr>td", :text => order1.name
+    assert_select "tr>td", :text => order1.address
+    assert_select "tr>td", :text => order1.email
+    assert_select "tr>td", :text => order1.pay_type.title
   end
 end
