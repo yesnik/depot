@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'sessions/new', as: 'login'
+
+  post 'sessions/create'
+
+  get 'sessions/destroy'
+
   resources :users
   resources :orders
   resources :line_items
