@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
-  get 'sessions/new', as: 'login'
+  get 'admin' => 'admin#index'
 
-  post 'sessions/create'
-
-  get 'sessions/destroy'
+  controller :sessions do
+    get 'login' => :new, as: 'login'
+    post 'login' => :create
+    delete 'logout' => :destroy
+  end
 
   resources :users
   resources :orders
