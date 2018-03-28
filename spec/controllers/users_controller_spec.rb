@@ -38,13 +38,19 @@ RSpec.describe UsersController, type: :controller do
   }
 
   let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
+    {
+      name: 'kenny',
+      password: '123',
+      password_confirmation: '1'
+    }
   }
+
+  let(:user) { create :user }
 
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
   # UsersController. Be sure to keep this updated too.
-  let(:valid_session) { {} }
+  let(:valid_session) { {user_id: user.id} }
 
   describe "GET #index" do
     it "returns a success response" do
@@ -79,10 +85,13 @@ RSpec.describe UsersController, type: :controller do
 
   describe "POST #create" do
     context "with valid params" do
+      let!(:valid_session) { {user_id: user.id} }
+      let!(:users_count_was) { User.count }
+
       it "creates a new User" do
-        expect {
-          post :create, params: {user: valid_attributes}, session: valid_session
-        }.to change(User, :count).by(1)
+        post :create, params: {user: valid_attributes}, session: valid_session
+
+        expect(User.all.count).to eq (users_count_was + 1)
       end
 
       it "redirects to the created user" do
@@ -133,11 +142,11 @@ RSpec.describe UsersController, type: :controller do
   end
 
   describe "DELETE #destroy" do
+    let!(:user) { create :user }
+
     it "destroys the requested user" do
-      user = User.create! valid_attributes
-      expect {
-        delete :destroy, params: {id: user.to_param}, session: valid_session
-      }.to change(User, :count).by(-1)
+      delete :destroy, params: {id: user.to_param}, session: valid_session
+      expect(User.find_by_id(user.id)).to be_nil
     end
 
     it "redirects to the users list" do

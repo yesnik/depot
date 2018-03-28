@@ -35,7 +35,7 @@ RSpec.describe LineItemsController, type: :controller do
   }
 
   let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
+    {product_id: 111, cart_id: 555}
   }
 
   # This should return the minimal set of values that should be in the session
@@ -44,22 +44,30 @@ RSpec.describe LineItemsController, type: :controller do
   let(:valid_session) { {} }
 
   describe "GET #index" do
+    let!(:line_item) { create :line_item }
+
+    before { sign_in }
+
     it "returns a success response" do
-      line_item = LineItem.create! valid_attributes
       get :index, params: {}, session: valid_session
       expect(response).to be_success
     end
   end
 
   describe "GET #show" do
+    let!(:line_item) { create :line_item }
+
+    before { sign_in }
+
     it "returns a success response" do
-      line_item = LineItem.create! valid_attributes
       get :show, params: {id: line_item.to_param}, session: valid_session
       expect(response).to be_success
     end
   end
 
   describe "GET #new" do
+    before { sign_in }
+
     it "returns a success response" do
       get :new, params: {}, session: valid_session
       expect(response).to be_success
@@ -67,6 +75,8 @@ RSpec.describe LineItemsController, type: :controller do
   end
 
   describe "GET #edit" do
+    before { sign_in }
+
     it "returns a success response" do
       line_item = LineItem.create! valid_attributes
       get :edit, params: {id: line_item.to_param}, session: valid_session
@@ -90,47 +100,39 @@ RSpec.describe LineItemsController, type: :controller do
         expect(response).to redirect_to store_index_url
       end
     end
-
-    context "with invalid params" do
-      it "returns a success response (i.e. to display the 'new' template)" do
-        post :create, params: {line_item: invalid_attributes}, session: valid_session
-        expect(response).to be_success
-      end
-    end
   end
 
   describe "PUT #update" do
     context "with valid params" do
+      before { sign_in }
+
+      let(:product2) { create :product }
+
       let(:new_attributes) {
-        skip("Add a hash of attributes valid for your model")
+        {product_id: product2.id, cart_id: cart.id}
       }
 
+      let(:line_item) { create :line_item }
+
       it "updates the requested line_item" do
-        line_item = LineItem.create! valid_attributes
         put :update, params: {id: line_item.to_param, line_item: new_attributes}, session: valid_session
         line_item.reload
-        skip("Add assertions for updated state")
+        expect(line_item.product_id).to eq product2.id
       end
 
       it "redirects to the line_item" do
-        line_item = LineItem.create! valid_attributes
         put :update, params: {id: line_item.to_param, line_item: valid_attributes}, session: valid_session
         expect(response).to redirect_to(line_item)
-      end
-    end
-
-    context "with invalid params" do
-      it "returns a success response (i.e. to display the 'edit' template)" do
-        line_item = LineItem.create! valid_attributes
-        put :update, params: {id: line_item.to_param, line_item: invalid_attributes}, session: valid_session
-        expect(response).to be_success
       end
     end
   end
 
   describe "DELETE #destroy" do
+    let!(:line_item) { create :line_item }
+
+    before { sign_in }
+
     it "destroys the requested line_item" do
-      line_item = LineItem.create! valid_attributes
       expect {
         delete :destroy, params: {id: line_item.to_param}, session: valid_session
       }.to change(LineItem, :count).by(-1)

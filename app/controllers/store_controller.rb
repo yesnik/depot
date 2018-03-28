@@ -4,6 +4,8 @@ class StoreController < ApplicationController
   before_action :set_cart
   before_action :update_visits_counter, only: [:index]
 
+  skip_before_action :authorize
+
   def index
     session[:visits_counter] = 0 if visits_counter > 10
 

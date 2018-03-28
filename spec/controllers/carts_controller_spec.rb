@@ -58,6 +58,7 @@ RSpec.describe CartsController, type: :controller do
   end
 
   describe "GET #new" do
+    before { sign_in }
     it "returns a success response" do
       get :new, params: {}, session: valid_session
       expect(response).to be_success
