@@ -20,6 +20,13 @@
         <%= f.text_field :name, size: 40 %>
       </div>
 
+      <% if action_name != 'new' %>
+        <div class="field">
+          <%= label_tag :current_password, 'Current password:' %>
+          <%= password_field_tag :current_password %>
+        </div>
+      <% end %>
+
       <div class="field">
         <%= f.label :password, 'Password:' %>
         <%= f.password_field :password, size: 40 %>
