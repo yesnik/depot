@@ -13,7 +13,18 @@ ru:
       questions: Вопросы
       news: Новости
       contact: Контакты
-  
+
+  orders:
+    new:
+      legend: Пожалуйста, укажите свои данные
+    form:
+      name: Имя
+      address_html: Адрес
+      email: E-mail
+      pay_type: Способ оплаты
+      pay_prompt_html: Укажите способ платежа
+      submit: Отправить заказ
+
   store:
     index:
       title_html: Книжная <b>полка</b>
