@@ -1,4 +1,15 @@
 en:
+  activerecord:
+    attributes:
+      order:
+        name: Name
+        address: Address
+        email: E-mail
+        pay_type: Pay type
+    models:
+      order:
+        one: Order
+
   carts:
     cart: 
       cart: Your Cart

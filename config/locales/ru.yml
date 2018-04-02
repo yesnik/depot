@@ -1,4 +1,15 @@
 ru:
+  activerecord:
+    attributes:
+      order:
+        name: Имя
+        address: Адрес
+        email: E-mail
+        pay_type: Способ платежа
+    models:
+      order:
+        one: Заказ
+
   carts:
     cart: 
       cart: Корзина
