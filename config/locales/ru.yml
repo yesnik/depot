@@ -1,0 +1,8 @@
+ru:
+  layouts:
+    application:
+      title: Книжная полка
+      home: Главная
+      questions: Вопросы
+      news: Новости
+      contact: Контакты
