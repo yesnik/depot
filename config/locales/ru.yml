@@ -1,4 +1,11 @@
 ru:
+  carts:
+    cart: 
+      cart: Корзина
+      empty: Очистить корзину
+      checkout: Оформить заказ
+      total: Итого
+  
   layouts:
     application:
       title: Книжная полка
@@ -6,3 +13,8 @@ ru:
       questions: Вопросы
       news: Новости
       contact: Контакты
+  
+  store:
+    index:
+      title_html: Книжная <b>полка</b>
+      add_to_cart: Добавить в корзину

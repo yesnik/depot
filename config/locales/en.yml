@@ -1,4 +1,11 @@
 en:
+  carts:
+    cart: 
+      cart: Your Cart
+      empty: Empty cart
+      checkout: Checkout
+      total: Total
+
   layouts:
     application:
       title: The Pragmatic Bookshelf
@@ -6,3 +13,8 @@ en:
       questions: Questions
       news: News
       contact: Contact
+
+  store:
+    index:
+      title_html: Book<b>shelf</b>
+      add_to_cart: Add to cart
