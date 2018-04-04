@@ -4,7 +4,7 @@ class Product < ApplicationRecord
 
   before_destroy :ensure_line_items_absence
 
-  validates :description, :image_url, :price, presence: true
+  validates :description, :image_url, :price, :locale, presence: true
   validates :title,
   			length: {minimum: 5,
   					 message: 'Title length should be minimum 5 characters'}
