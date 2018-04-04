@@ -110,6 +110,8 @@ RSpec.describe UsersController, type: :controller do
 
   describe "PUT #update" do
     context "with valid params" do
+      let!(:user) { create :user }
+
       let(:new_attributes) {
         {
           name: 'kenny_new',
@@ -118,16 +120,14 @@ RSpec.describe UsersController, type: :controller do
         }
       }
 
+      before { sign_in }
+
       it "updates the requested user" do
-        user = User.create! valid_attributes
-        put :update, params: {id: user.to_param, user: new_attributes}, session: valid_session
+        put :update, params: {id: user.id, user: new_attributes,
+                              current_password: user.password},
+                     session: valid_session
         user.reload
         expect(user.name).to eq new_attributes[:name]
-      end
-
-      it "redirects to the user" do
-        user = User.create! valid_attributes
-        put :update, params: {id: user.to_param, user: valid_attributes}, session: valid_session
         expect(response).to redirect_to users_url
       end
     end
@@ -143,6 +143,8 @@ RSpec.describe UsersController, type: :controller do
 
   describe "DELETE #destroy" do
     let!(:user) { create :user }
+
+    before { sign_in }
 
     it "destroys the requested user" do
       delete :destroy, params: {id: user.to_param}, session: valid_session

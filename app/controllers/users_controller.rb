@@ -32,7 +32,7 @@ class UsersController < ApplicationController
           notice: "User #{@user.name} was successfully created." }
         format.json { render :show, status: :created, location: @user }
       else
-        format.html { render :new, 'Sorry, something went wrong' }
+        format.html { render :new, notice: 'Sorry, something went wrong' }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
@@ -76,8 +76,7 @@ class UsersController < ApplicationController
   protected
 
   def check_current_password
-    user = User.find_by(name: params[:user][:name])
-    return false unless user
+    user = User.find(params[:id])
     user.authenticate(params[:current_password]).present?
   end
 

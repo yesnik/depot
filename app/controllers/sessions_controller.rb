@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
       user = User.new(name: params[:name], password: params[:password])
 
       unless user.save
-        redirect_to login_url, alert: 'Incorrect user or password for user'
+        return redirect_to login_url, alert: 'Incorrect user or password for user'
       end
     end
 
