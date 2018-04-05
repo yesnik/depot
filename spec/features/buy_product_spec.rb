@@ -8,24 +8,24 @@ feature 'Buying new product' do
 
   scenario 'Add product to cart' do
     visit store_index_path
-    click_button 'Add to Cart'
+    click_button 'Add to cart'
     
     expect(page).to have_button('Checkout')
   end
 
   scenario 'Click Checkout button' do
     visit store_index_path
-    click_button 'Add to Cart'
+    click_button 'Add to cart'
     click_button 'Checkout'
 
-    expect(page).to have_button('Place order')
+    expect(page).to have_button('Place Order')
   end
 
   let!(:pay_type) { create :pay_type }
 
   scenario 'Fill Order Details' do
     visit store_index_path
-    click_button 'Add to Cart'
+    click_button 'Add to cart'
     click_button 'Checkout'
 
     within('.depot_form') do
@@ -35,7 +35,7 @@ feature 'Buying new product' do
 
       select pay_type.title, from: 'order[pay_type_id]'
     end
-    click_button 'Place order'
+    click_button 'Place Order'
 
     expect(page).to have_content 'Thank you for your order'
   end
