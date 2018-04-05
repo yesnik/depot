@@ -6,6 +6,12 @@ ru:
         address: Адрес
         email: E-mail
         pay_type: Способ платежа
+      product:
+        title: Заголовок
+        description: Описание
+        image_url: URL изображения
+        price: Цена
+        locale: Язык
     models:
       order:
         one: Заказ

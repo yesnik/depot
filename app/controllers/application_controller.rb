@@ -23,7 +23,10 @@ class ApplicationController < ActionController::Base
   end
 
   def set_i18n_locale_from_params
-    return unless params[:locale]
+    unless params[:locale]
+      I18n.locale = I18n.default_locale
+      return
+    end
     
     if I18n.available_locales.map(&:to_s).include?(params[:locale])
       I18n.locale = params[:locale]

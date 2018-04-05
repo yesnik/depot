@@ -6,9 +6,17 @@ en:
         address: Address
         email: E-mail
         pay_type: Pay type
+      product:
+        title: Title
+        description: Description
+        image_url: Image URL
+        price: Price
+        locale: Locale
     models:
       order:
         one: Order
+      product:
+        one: Product
 
   carts:
     cart: 

@@ -16,7 +16,9 @@ Rails.application.routes.draw do
     root 'store#index', as: 'store_index', via: :all
   end
 
-  resources :products do
-    get :who_bought, on: :member
+  scope 'admin' do
+    resources :products do
+      get :who_bought, on: :member
+    end
   end
 end
