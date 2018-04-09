@@ -42,6 +42,12 @@ ru:
       pay_prompt_html: Укажите способ платежа
       submit: Отправить заказ
 
+  pay_types:
+    check: Чек
+    credit_card: Кредитная карта
+    purchase_order: Оплата наличными
+    yandex_money: Яндекс деньги
+
   store:
     index:
       title_html: Книжная <b>полка</b>
