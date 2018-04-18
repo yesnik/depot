@@ -1,0 +1,10 @@
+<h1>Uploaded pictures</h1>
+
+<ul class="pictures-list">
+<% @pictures.each do |picture| %>
+  <li>
+    <h3><%= picture.comment %></h3>
+    <img class="picture" src="<%= url_for(:action => 'picture', :id => picture.id) %>"/>
+  </li>
+<% end %>
+</ul>
