@@ -1,4 +1,8 @@
+require './scripts/store'
+
 Rails.application.routes.draw do
+  match 'catalog' => StoreApp.new, via: :all
+
   get 'upload/get'
   get 'upload/index'
   get 'upload/show'
