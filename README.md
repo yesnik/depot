@@ -53,5 +53,5 @@ rails s
 
   - Public area: http://0.0.0.0:3000/
 
-  - Admin area (any login/password for the first time): http://0.0.0.0:3000/
+  - Admin area (any login/password for the first time): http://0.0.0.0:3000/admin
 
