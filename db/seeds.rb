@@ -15,7 +15,8 @@ Product.create(
 	This is a nice book about PHP
 	</p>},
 	image_url: 'php.jpg',
-	price: 26.00
+	price: 26.00,
+	locale: 'en'
 )
 
 Product.create(
@@ -37,7 +38,8 @@ Product.create(
 		and a simple web app you can deploy online.</p>
 	},
 	image_url: 'python.jpg',
-	price: 16.00
+	price: 16.00,
+	locale: 'en'
 )
 
 Product.create(
@@ -57,5 +59,6 @@ Product.create(
 		by the languages we were using.</p>
 	},
 	image_url: 'ruby.jpg',
-	price: 31.00
+	price: 31.00,
+	locale: 'en'
 )

@@ -1,24 +1,57 @@
-# README
+# Depot - Ruby on Rails Store
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This application was developed using materials of the book "Agile Web Development with Rails 5" by Sam Ruby.
 
-Things you may want to cover:
+## Installation
 
-* Ruby version
+* Connect to PostgreSQL database
 
-* System dependencies
+```
+sudo -u postgres psql
+```
 
-* Configuration
+* Create user `depot`
 
-* Database creation
+```
+CREATE USER depot WITH CREATEDB PASSWORD '123';
+```
 
-* Database initialization
+* Copy file `.env.sample` to file `.env` and ensure that your DB credentials are correct in this file:
 
-* How to run the test suite
+```
+DB_USERNAME=depot
+DB_PASSWORD=123
+DB_HOST=localhost
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+* Clone this repository
 
-* Deployment instructions
+```
+git clone git@github.com:yesnik/depot.git
+```
 
-* ...
+* Install dependencies
+
+```
+cd depot
+bundle install
+```
+
+* Create database, run migrations and apply seeds
+
+```
+rails db:setup
+```
+
+* Run development server
+
+```
+rails s
+```
+
+* Visit site 
+
+  - Public area: http://0.0.0.0:3000/
+
+  - Admin area (any login/password for the first time): http://0.0.0.0:3000/
+
